@@ -8,7 +8,7 @@
                 <div class="row" style="opacity: 1;border-width: 21px;border-color: rgb(29,49,197);">
                     <div class="col-lg-5 d-none d-lg-flex" style="background: rgb(230,32,43);">
                         <div class="flex-grow-1 bg-register-image"
-                            style="background: url(&quot;assets/img/dogs/logo-ppi-utm%20clean%20putih.png&quot;) center / contain no-repeat, rgb(230,32,43);">
+                            style="background: url({{url("images/logo-ppi-utmcleanputih.png")}}) center / contain no-repeat, rgb(230,32,43);">
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -78,4 +78,5 @@
             </div>
         </div>
     </div>
+
 @endsection

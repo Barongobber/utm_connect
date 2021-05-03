@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <div class="d-sm-flex justify-content-between align-items-center">
     <h3 class="text-dark mb-4">Email Blasting</h3>
     <button class="btn btn-primary btn-sm d-none d-sm-inline-block btnMove mb-3" data-toggle="modal" data-target="#newCampaignModal" style="background: rgb(230,32,43);border-color: rgb(230,32,43); margin-bottom:0px;"><i class="fa fa-plus fa-sm text-white-50"></i>&nbsp;Blast Email</button>
@@ -61,8 +63,10 @@
             </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success" onclick="window.location.href='?cms=email_blast&act=manage_blast'">Make</button>
+                    <button type="submit" class="btn btn-success" onclick="window.location.href='{{url('manageBlast')}}'">Make</button>
                 </div>
         </div>
     </div>
 </div>
+
+@endsection

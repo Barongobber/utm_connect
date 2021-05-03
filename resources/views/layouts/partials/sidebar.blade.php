@@ -9,15 +9,15 @@
         </a>
         <hr class="sidebar-divider my-0">
         <ul class="navbar-nav text-light" id="accordionSidebar">
-            <li class="nav-item"><a class="nav-link" href="?cms=main_dashboard"><i
+            <li class="nav-item"><a class="nav-link" href="{{url('/')}}"><i
                         class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="?cms=profile"><i
+            <li class="nav-item"><a class="nav-link" href="{{url('profile')}}"><i
                         class="fas fa-user"></i><span>Profile</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="?cms=content_management"><i
+            <li class="nav-item"><a class="nav-link" href="{{url('table')}}"><i
                         class="fas fa-table"></i><span>Post Management</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="?cms=feedback_management"><i
+            <li class="nav-item"><a class="nav-link" href="{{url('feedback')}}"><i
                         class="fa fa-pencil-square"></i><span>Feedback Management</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="?cms=email_blast"><i
+            <li class="nav-item"><a class="nav-link" href="{{url('listBlasting')}}"><i
                         class="fas fa-envelope-square"></i><span>Email Blasting</span></a></li>
 
             @guest

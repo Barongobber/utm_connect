@@ -16,7 +16,7 @@
     <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 </head>
 
-<body class="bg-gradient-white" style="background: {{url('images/output-onlinepngtools.png')}} center / contain no-repeat, rgb(255,255,255);">
+<body class="bg-gradient-white" style="background: {{ url('images/output-onlinepngtools.png')}} center / contain no-repeat, rgb(255,255,255);">
     <div class="container" style="opacity: 0.94;"><br><br>
         <div class="card shadow-lg o-hidden border-0 my-5" style="border: 2px solid rgb(5,33,248) ;">
             <div class="card-body p-0">

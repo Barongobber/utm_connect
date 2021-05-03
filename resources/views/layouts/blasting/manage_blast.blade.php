@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <div class="d-sm-flex justify-content-between align-items-center">
     <h3 class="text-dark mb-4">Manage Your Content Here!!</h3>
 </div>
@@ -17,7 +19,7 @@
                             
                         </div>
                         <div class="col-sm-6 text-right">
-                            <button onclick="window.location.href='?cms=email_blast&act=manage_blast&manage=add'" class="btn btn-primary col-sm-4">Choose Recipients</button>
+                            <button onclick="window.location.href='{{url('chooseRecipients')}}'" class="btn btn-primary col-sm-4">Choose Recipients</button>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -39,7 +41,7 @@
                             
                         </div>
                         <div class="col-sm-6 text-right">
-                            <button onclick="window.location.href='?cms=email_blast&act=manage_blast&manage=design'" class="btn btn-primary col-sm-4">Design Email</button>
+                            <button onclick="window.location.href='{{url('makeTemplate')}}'" class="btn btn-primary col-sm-4">Design Email</button>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -57,7 +59,7 @@
             </div>
             <div class="card-footer">
                 <div class="text-right">
-                    <button type="button" class="btn btn-danger btn-shadow" onclick="window.location.href='?cms=email_blast'">Cancel</button>
+                    <button type="button" class="btn btn-danger btn-shadow" onclick="window.location.href='{{url('listBlasting')}}'">Cancel</button>
                     <button type="submit" class="btn btn-success btn-shadow">Send</button>
                 </div>
             </div>
@@ -127,3 +129,4 @@
         </div>
     </div>
 </div>
+@endsection

@@ -25,8 +25,11 @@
     <div id="wrapper">
         @include('layouts.partials.sidebar')
         <div class="d-flex flex-column" id="content-wrapper">
-                @include('layouts.partials.topbar')
+            @include('layouts.partials.topbar')
+            <div class="p-3">
+
                 @yield('content')
+            </div>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
 

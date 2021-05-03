@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <h3 class="text-dark mb-4">Feedback Management</h3> <br>
 <div class="card shadow">
     <div class="tabbable">
@@ -19,7 +21,7 @@
                                 <td align="center">10 Feb 2021</td>
                                 <td align="center">28 Feb 2021</td>
                                 <td align="center">
-                                    <a href="?cms=feedback_management&act=see"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-eye"></button></i></a>
+                                    <a href="{{url('feedbackDetails')}}"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-eye"></button></i></a>
                                     <a href="" data-toggle="modal" data-target="#delFeedbackModal"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
                                 </td>
                             </tr>
@@ -28,7 +30,7 @@
                                 <td align="center">10 Feb 2021</td>
                                 <td align="center">28 Feb 2021</td>
                                 <td align="center">
-                                    <a href="?cms=feedback_management&act=see"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-eye"></button></i></a>
+                                    <a href="{{url('feedbackDetails')}}"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-eye"></button></i></a>
                                     <a href="" data-toggle="modal" data-target="#delFeedbackModal"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
                                 </td>
                             </tr>
@@ -39,3 +41,4 @@
         </div>
     </div>
 </div>
+@endsection

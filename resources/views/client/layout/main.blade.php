@@ -30,16 +30,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/user/home/">Home</a>
+            <a class="nav-link" href="{{url('/user/home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/news/">News</a>
+            <a class="nav-link" href="{{url('/user/news')}}">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/events/">Events</a>
+            <a class="nav-link" href="{{url('/user/events')}}">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/academic/">Academic</a>
+            <a class="nav-link" href="/user/academic">Academic</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Organization</a>

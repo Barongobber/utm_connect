@@ -75,7 +75,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //client
-Route::get('/user/', function () {
+Route::get('/user', function () {
     return view('client.index');
 });
 Route::get('/user/home', function () {

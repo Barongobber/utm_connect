@@ -167,7 +167,7 @@
             </a>
         </div>
 
-        <a href="/user/news/"><button class="btn btn-news-preview btn-lg btn-block">See all news</button></a>
+        <a href="{{url('user-news')}}"><button class="btn btn-news-preview btn-lg btn-block">See all news</button></a>
     </div>
   </section>
 
@@ -364,7 +364,7 @@
             </a>
         </div>
         <div class="text-center">
-            <a class="buttons" href="/user/events/"><button class="btn btn-std btn-lg mr-0 ml-0">See all events</button></a>
+            <a class="buttons" href="{{url('user-events')}}"><button class="btn btn-std btn-lg mr-0 ml-0">See all events</button></a>
         </div>
 
 

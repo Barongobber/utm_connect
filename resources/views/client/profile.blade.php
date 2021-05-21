@@ -111,7 +111,7 @@ Content
                     <hr class="mt-0">
                 </div>
                 <div class="mx-auto">
-                  <a href="/user/editprofile"><button class="btn btn-std">Edit Profile</button></a> 
+                  <a href="{{url('user-editprofile')}}"><button class="btn btn-std">Edit Profile</button></a> 
                 </div>
             </div>
         </div>

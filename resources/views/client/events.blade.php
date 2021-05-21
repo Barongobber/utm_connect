@@ -85,7 +85,7 @@
           </div>
         </div>
         <div class="text-right event-button">
-                  <a href="/user/view-event/"><button class="btn btn-red">Check out event</button></a>
+                  <a href="{{url('user-view-event')}}"><button class="btn btn-red">Check out event</button></a>
               </div>
       </div>
     </div>

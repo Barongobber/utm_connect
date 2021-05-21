@@ -78,41 +78,41 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/user/', function () {
     return view('client.index');
 });
-Route::get('/user/home', function () {
+Route::get('/user-home', function () {
     return view('client.index');
 });
 
-Route::get('/user/news', function(){
+Route::get('/user-news', function(){
     return view('client.news');
 });
-Route::get('/user/view-news', function(){
+Route::get('/user-view-news', function(){
     return view('client.view-news');
 });
-Route::get('/user/events', function(){
+Route::get('/user-events', function(){
     return view('client.events');
 });
-Route::get('/user/view-event', function(){
+Route::get('/user-view-event', function(){
     return view('client.view-event');
 });
-Route::get('/user/academic', function(){
+Route::get('/user-academic', function(){
     return view('client.academic');
 });
-Route::get('/user/elibrary', function(){
+Route::get('/user-elibrary', function(){
     return view('client.elibrary');
 });
-Route::get('/user/about', function(){
+Route::get('/user-about', function(){
     return view('client.about');
 });
-Route::get('/user/aspiration', function(){
+Route::get('/user-aspiration', function(){
     return view('client.aspiration');
 });
-Route::get('/user/profile', function(){
+Route::get('/user-profile', function(){
     return view('client.profile');
 });
-Route::get('/user/editprofile', function(){
+Route::get('/user-editprofile', function(){
     return view('client.editprofile');
 });
-Route::get('/user/signup', function(){
+Route::get('/user-signup', function(){
     return view('client.signup');
 });
 

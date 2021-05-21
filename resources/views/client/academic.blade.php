@@ -21,7 +21,7 @@ Insert Here
                     Access our E-Library
                     <div class="spacer mb-2"></div>
                     <button class="btn drive-btn">
-                        <a href="/user/elibrary/"><i class="fab fa-google-drive"></i>  E-Library</a>
+                        <a href="{{url('user-elibrary')}}"><i class="fab fa-google-drive"></i>  E-Library</a>
                     </button>
                 </div>
             </div>

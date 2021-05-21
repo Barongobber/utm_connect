@@ -30,22 +30,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/user/home/">Home</a>
+            <a class="nav-link" href="{{url('user-home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/news/">News</a>
+            <a class="nav-link" href="{{url('user-news')}}">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/events/">Events</a>
+            <a class="nav-link" href="{{url('user-events')}}">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/user/academic/">Academic</a>
+            <a class="nav-link" href="{{url('user-academic')}}">Academic</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Organization</a>
             <div class="dropdown-menu animated--grow-in">
-              <a href="/user/about" class="dropdown-item">About</a>
-              <a href="/user/aspiration" class="dropdown-item">Aspiration</a>
+              <a href="{{url('user-about')}}" class="dropdown-item">About</a>
+              <a href="{{url('user-aspiration')}}" class="dropdown-item">Aspiration</a>
             </div>
           </li>
         </ul>
@@ -57,7 +57,7 @@
                     <div class="d-lg-none dropdown-divider"></div>
                     <img class="border rounded-circle img-profile avatar" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
-                      <a class="dropdown-item" href="/user/profile"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                      <a class="dropdown-item" href="{{url('user-profile')}}"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                     </div>

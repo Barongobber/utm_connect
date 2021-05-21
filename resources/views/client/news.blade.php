@@ -36,7 +36,7 @@
                   <div class="card-body">
                     <img class="news-content-img img-fluid" src="{{asset('projectad/news/img/2.jpg')}}" alt="news"/>
                     <div class="text-news">
-                      <h3 class="news-list-title"><a class="title-anchor" href="/user/view-news/"> Lorem Ipsum Dolor Sit Amet</a></h3>
+                      <h3 class="news-list-title"><a class="title-anchor" href="{{url('user-view-news')}}"> Lorem Ipsum Dolor Sit Amet</a></h3>
                     <div class="news-paragraph-preview">
                       <p class="preview-para">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,

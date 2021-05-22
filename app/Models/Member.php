@@ -17,10 +17,13 @@ class Member extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstName',
-        'lastName',
+        'matrix_card',
+        'name',
         'email',
         'password',
+        'batch',
+        'program_code',
+        'degree',
     ];
 
     /**

@@ -14,8 +14,7 @@ class CreateMemberTable extends Migration
     public function up()
     {
         Schema::create('member', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('matrix_card')->unique();
+            $table->string('matrix_card')->unique()->primary();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('name');

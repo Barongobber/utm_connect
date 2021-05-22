@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Member;
 
 class Admin extends Model
 {
@@ -13,4 +14,8 @@ class Admin extends Model
         'matrix_card',
         'admin_year',
     ];
+
+    public function member(){
+        return $this->belongsTo(Member::class);
+    }
 }

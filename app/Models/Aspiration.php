@@ -16,4 +16,5 @@ class Aspiration extends Model
         'aspiration_subject',
         'aspiration_content',
     ];
+    
 }

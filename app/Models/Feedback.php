@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Feedback extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'matrix_card_feedback',
+        'comment_on',
+        'event_id',
+        'feedback',
+        'rate_event',
+    ];
 }

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class GrantAccess extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+
+        'grant_id',
+        'grant_desc',
+    ];
 }

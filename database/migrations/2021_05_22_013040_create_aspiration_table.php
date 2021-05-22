@@ -14,8 +14,7 @@ class CreateAspirationTable extends Migration
     public function up()
     {
         Schema::create('aspiration', function (Blueprint $table) {
-            $table->id();
-            $table->string('matrix_no')->unique();
+            $table->string('matrix_no')->unique()->primary();
             $table->string('posted_on');
             $table->string('division_name')->unique();
             $table->string('aspiration_subject');

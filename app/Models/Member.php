@@ -24,6 +24,8 @@ class Member extends Authenticatable
         'batch',
         'program_code',
         'degree',
+        'address',  
+        'access_grant',  
     ];
 
     /**

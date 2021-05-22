@@ -14,8 +14,7 @@ class CreateDivisionTable extends Migration
     public function up()
     {
         Schema::create('division', function (Blueprint $table) {
-            $table->id();
-            $table->string('division_name')->nullable(false)->unique();
+            $table->string('division_name')->nullable(false)->unique()->primary();
             $table->timestamps();
 
             $table->softDeletes();

@@ -14,8 +14,7 @@ class CreateAdminTable extends Migration
     public function up()
     {
         Schema::create('admin', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('matrix_card')->nullable(false)->unique();
+            $table->string('matrix_card')->nullable(false)->unique()->primary();
             $table->string('admin_year')->nullable(false);
             $table->foreign('matrix_card')
                 ->references('matrix_card')

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Feedback;
 
 class Event extends Model
 {
@@ -24,4 +25,8 @@ class Event extends Model
         'event_pic2',
         'event_pic3',
     ];
+
+    public function feedback(){
+        return $this->hasMany(Feedback::class);
+    }
 }

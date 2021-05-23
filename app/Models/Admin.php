@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Member;
 
-class Admin extends Model
+class Admin extends Member
 {
     use HasFactory;
 
@@ -16,6 +16,6 @@ class Admin extends Model
     ];
 
     public function member(){
-        return $this->belongsTo(Member::class);
+        return $this->belongsToMany(Member::class);
     }
 }

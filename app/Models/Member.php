@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\GrantAccess;
+use App\Models\Program;
 
 class Member extends Authenticatable
 {
@@ -47,4 +49,10 @@ class Member extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function grant_access(){
+        return $this->hasOne(GrantAccess::class);
+    }
+    public function program(){
+        return $this->hasOne(Program::class);
+    }
 }

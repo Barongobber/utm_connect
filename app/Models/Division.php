@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Aspiration;
 
 class Division extends Model
 {
@@ -12,4 +13,8 @@ class Division extends Model
     protected $fillable = [
         'division_name',
     ];
+
+    public function aspiration(){
+        return $this->hasMany(Aspiration::class);
+    }
 }

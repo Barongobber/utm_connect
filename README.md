@@ -50,7 +50,7 @@ Start the local development server
     php artisan serve
 ```
 
-You can now access the server at <http://localhost:8000> okee
+You can now access the server at <http://localhost:8000>
 
 ### Github branch renamed - Updating a local clone after a branch name changes
 

@@ -72,7 +72,6 @@
                                              <div class="form-check">
                                                  <input class="form-check-input" type="checkbox" name="remember"
                                                      id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                                                  <label class="form-check-label" for="remember">
                                                      {{ __('Remember Me') }}
                                                  </label>
@@ -100,7 +99,6 @@
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -122,7 +120,6 @@
                     <button type="button" onclick="login();" class="btn btn-success" data-dismiss="modal">Ok</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

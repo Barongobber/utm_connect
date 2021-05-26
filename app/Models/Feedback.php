@@ -9,6 +9,7 @@ use App\Models\Event;
 class Feedback extends Model
 {
     use HasFactory;
+    public $table = 'feedback';
 
     protected $fillable = [
         'matrix_card_feedback',

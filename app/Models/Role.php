@@ -9,6 +9,7 @@ use App\Models\Management;
 class Role extends Model
 {
     use HasFactory;
+    public $table = 'role';
 
     protected $fillable = [
         'role_id',

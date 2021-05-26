@@ -9,6 +9,7 @@ use App\Models\Member;
 class Admin extends Member
 {
     use HasFactory;
+    public $table = 'admin';
 
     protected $fillable = [
         'matrix_card',

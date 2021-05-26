@@ -9,6 +9,7 @@ use App\Models\Feedback;
 class Event extends Model
 {
     use HasFactory;
+    public $table = 'event';
 
     protected $fillable = [
         'event_id',

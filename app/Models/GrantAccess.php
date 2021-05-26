@@ -9,6 +9,7 @@ use App\Models\Member;
 class GrantAccess extends Model
 {
     use HasFactory;
+    public $table = 'grant_access';
 
     protected $fillable = [
 

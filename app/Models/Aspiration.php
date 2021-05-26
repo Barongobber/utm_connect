@@ -9,6 +9,7 @@ use App\Models\Division;
 class Aspiration extends Model
 {
     use HasFactory;
+    public $table = 'aspiration';
 
     protected $fillable = [
         'matrix_card',
@@ -21,5 +22,5 @@ class Aspiration extends Model
     public function division(){
         return $this->belongsTo(Division::class);
     }
-    
+
 }

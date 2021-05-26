@@ -9,6 +9,7 @@ use App\Models\Aspiration;
 class Division extends Model
 {
     use HasFactory;
+    public $table = 'division';
 
     protected $fillable = [
         'division_name',

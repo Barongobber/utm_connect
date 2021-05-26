@@ -9,6 +9,7 @@ use App\Models\Member;
 class Program extends Model
 {
     use HasFactory;
+    public $table = 'program';
 
     protected $fillable = [
         'program_code',
@@ -20,5 +21,5 @@ class Program extends Model
     public function member(){
         return $this->belongsTo(Member::class);
     }
-    
+
 }

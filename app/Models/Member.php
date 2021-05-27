@@ -12,6 +12,8 @@ use App\Models\Program;
 class Member extends Authenticatable
 {
     public $table = 'member';
+    public $guard = 'member';
+
     protected $primary_key = 'matrix_card';
     public $incrementing = false;
     protected $keyType = 'string';

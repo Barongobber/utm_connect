@@ -34,13 +34,22 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
 
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
         //$session = Member::where('email', $email)->where('password', bcrypt($password))->get();
         $auth = Auth::attempt(['email' => $email, 'password' => $password]);
+        // dd($request);
 
         if($auth){
             $ga = auth()->user()->access_grant;
             $uga = GrantAccess::where('grant_id', $ga)->get();
             $ugd = $uga[0]->grant_desc;
+
+            Auth::guard($ugd);
+
             $uemail = auth()->user()->email;
             $umcard = auth()->user()->matrix_card;
 
@@ -53,8 +62,6 @@ class LoginController extends Controller
             return redirect('login');
         }
     }
-
-
 
     use AuthenticatesUsers;
 
@@ -73,5 +80,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:member')->except('logout');
+        $this->middleware('guest:management')->except('logout');
     }
 }

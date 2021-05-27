@@ -11,6 +11,7 @@ use App\Models\Member;
 class Management extends Member
 {
     public $table = 'management';
+    public $guard = 'management';
     use HasFactory;
 
     protected $fillable = [

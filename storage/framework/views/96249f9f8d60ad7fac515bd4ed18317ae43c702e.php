@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <title>UTM - Connect | Log in</title>
     <link rel="stylesheet" href="<?php echo e(asset('bootstrap/css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -101,7 +103,6 @@ unset($__errorArgs, $__bag); ?>
                                              <div class="form-check">
                                                  <input class="form-check-input" type="checkbox" name="remember"
                                                      id="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>>
-
                                                  <label class="form-check-label" for="remember">
                                                      <?php echo e(__('Remember Me')); ?>
 
@@ -131,7 +132,6 @@ unset($__errorArgs, $__bag); ?>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -153,7 +153,6 @@ unset($__errorArgs, $__bag); ?>
                     <button type="button" onclick="login();" class="btn btn-success" data-dismiss="modal">Ok</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

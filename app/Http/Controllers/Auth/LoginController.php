@@ -49,6 +49,7 @@ class LoginController extends Controller
             $ugd = $uga[0]->grant_desc;
 
             Auth::guard($ugd);
+            $request->session()->regenerate();
 
             $uemail = auth()->user()->email;
             $umcard = auth()->user()->matrix_card;
@@ -61,6 +62,24 @@ class LoginController extends Controller
         }else{
             return redirect('login');
         }
+    }
+
+    public function index(Request $r)
+    {
+
+        $role = $r->session()->get('user_access');
+
+        if($role == "admin"){
+            return redirect('admin');
+        } else if($role == "management"){
+            return redirect('management');
+        } else if($role == "member"){
+            return redirect('member');
+        } else {
+            return redirect('logout');
+        }
+
+        return view('home');
     }
 
     use AuthenticatesUsers;

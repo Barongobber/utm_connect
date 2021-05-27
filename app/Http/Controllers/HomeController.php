@@ -8,25 +8,6 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
 
-    public function index(Request $r)
-    {
-
-        $role = $r->session()->get('user_access');
-        dd($role);
-
-        if($role == "admin"){
-            return redirect('admin');
-        } else if($role == "management"){
-            return redirect('management');
-        } else if($role == "member"){
-            return redirect('member');
-        } else {
-            return redirect('logout');
-        }
-
-        return view('home');
-    }
-
     /**
      * Create a new controller instance.
      *
@@ -42,6 +23,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-
+    public function index()
+    {
+        return view('home');
+    }
 
 }

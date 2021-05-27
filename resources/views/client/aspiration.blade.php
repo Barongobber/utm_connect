@@ -19,7 +19,7 @@ Content
     <div class="px-5 mb-3">
       <button class="btn btn-red btn-md mt-2" data-toggle="modal" data-target="#aspirationModal">Submit your idea</button>
     </div>
-    <div class="owl-carousel owl-theme">   
+    <div class="owl-carousel owl-theme">
         <div class="card bordered-col-lg pt-3 mb-2">
           <h4>Academic Division</h4>
           <div class="card-body">
@@ -27,7 +27,13 @@ Content
               <div class="card-body">
                 <div class="row">
                   <div class="col-3 feedback-profile">
-                    <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
+                    <span class="d-block text-gray-600 small mx-auto mb-2" >
+                        @if (session('user_email'))
+                            {{ session('user_email') }}
+                        @else
+                            Udin Saleh
+                        @endif
+                    </span>
                     <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                   </div>
                   <div class="col-9">
@@ -44,12 +50,17 @@ Content
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
             <div class="card feedback-list-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col-3 feedback-profile">
-                    <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
+                    <span class="d-block text-gray-600 small mx-auto mb-2" >
+                        @if (session('user_email'))
+                            {{ session('user_email') }}
+                        @else
+                            Udin Saleh
+                        @endif</span>
                     <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                   </div>
                   <div class="col-9">
@@ -66,12 +77,18 @@ Content
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
             <div class="card feedback-list-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col-3 feedback-profile">
-                    <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
+                    <span class="d-block text-gray-600 small mx-auto mb-2" >
+                        @if (session('user_email'))
+                            {{ session('user_email') }}
+                        @else
+                            Udin Saleh
+                        @endif
+                    </span>
                     <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                   </div>
                   <div class="col-9">
@@ -88,7 +105,7 @@ Content
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
           </div>
         </div>
 
@@ -135,7 +152,13 @@ Content
               <div class="card-body">
                 <div class="row">
                   <div class="col-3 feedback-profile">
-                    <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
+                    <span class="d-block text-gray-600 small mx-auto mb-2" >
+                        @if (session('user_email'))
+                            {{ session('user_email') }}
+                        @else
+                            Udin Saleh
+                        @endif
+                    </span>
                     <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                   </div>
                   <div class="col-9">
@@ -152,11 +175,11 @@ Content
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
           </div>
         </div>
 
-      
+
     </div>
   </div>
 </section>

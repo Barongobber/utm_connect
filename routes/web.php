@@ -25,75 +25,74 @@ Auth::routes();
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_user');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [LoginController::class, 'index'])->name('home');
 
+    //This exclusive for ADMIN
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index']);
     });
 
+    //This exclusive for MANAGEMENT
     Route::middleware(['management'])->group(function () {
         Route::get('management', [ManagementController::class, 'index']);
+
+        Route::get('/profile', [ManagementController::class, 'profilePage'])->name('profile');
+
+        //forms
+        Route::get('/register', function () {
+            return view('register');
+        })->name('register');
+
+        //Posts
+        Route::get('/addNews', function () {
+            return view('layouts.post.add_news');
+        });
+        Route::get('/addPost', function () {
+            return view('layouts.post.add_post');
+        });
+        Route::get('/contentList', function () {
+            return view('layouts.post.content_list');
+        });
+        Route::get('/table', function () {
+            return view('layouts.post.table');
+        });
+
+
+        //blasting
+        Route::get('/chooseRecipients', function () {
+            return view('layouts.blasting.choose_recipients');
+        });
+        Route::get('/listBlasting', function () {
+            return view('layouts.blasting.list_blasting');
+        });
+        Route::get('/makeTemplate', function () {
+            return view('layouts.blasting.make_template');
+        });
+        Route::get('/manageBlast', function () {
+            return view('layouts.blasting.manage_blast');
+        });
+
+
+        //feedback
+        Route::get('/feedbackDetails', function () {
+            return view('layouts.feedback.feedback_details');
+        });
+        Route::get('/feedback', function () {
+            return view('layouts.feedback.feedback');
+        });
     });
 
+    //This exclusive for MEMBER
     Route::middleware(['member'])->group(function () {
         Route::get('member', [MemberController::class, 'index']);
     });
 
     Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-});
-
-Route::get('/', [LoginController::class, 'login'])->name('login');
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-//forms
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-// Route::get('/login', function () {
-//     return view('login');
 // });
 
-//Posts
-Route::get('/addNews', function () {
-    return view('layouts.post.add_news');
-});
-Route::get('/addPost', function () {
-    return view('layouts.post.add_post');
-});
-Route::get('/contentList', function () {
-    return view('layouts.post.content_list');
-});
-Route::get('/table', function () {
-    return view('layouts.post.table');
-});
-
-
-//blasting
-Route::get('/chooseRecipients', function () {
-    return view('layouts.blasting.choose_recipients');
-});
-Route::get('/listBlasting', function () {
-    return view('layouts.blasting.list_blasting');
-});
-Route::get('/makeTemplate', function () {
-    return view('layouts.blasting.make_template');
-});
-Route::get('/manageBlast', function () {
-    return view('layouts.blasting.manage_blast');
-});
-
-
-//feedback
-Route::get('/feedbackDetails', function () {
-    return view('layouts.feedback.feedback_details');
-});
-Route::get('/feedback', function () {
-    return view('layouts.feedback.feedback');
-});
+Route::get('/', [LoginController::class, 'login'])->name('login');
 
 
 //client

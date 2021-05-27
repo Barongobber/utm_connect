@@ -19,14 +19,14 @@ Content
                     <span class="text-avatar-profile">Change profile picture</span>
                 </div>
             </div>
-                
+
             <div class="row profile-show">
                 <div class="col-lg-6 col-sm-12 col-md-6 mb-2 user-data">
                     <div class="row">
                         <div class="col-5 pr-0">
                             <span class="d-inline"><i class="fas fa-user-tag mr-2"></i>Access Grant:</span>
                         </div>
-                        <div class="col-7">                   
+                        <div class="col-7">
                             <span>High Marshall</span>
                         </div>
                     </div>
@@ -49,7 +49,13 @@ Content
                             <span class="d-inline"><i class="fas fa-id-badge mr-2"></i>Full Name:</span>
                         </div>
                         <div class="col-7">
-                            <span>Udin Saleh</span>
+                            <span>
+                            @if (session('user_email'))
+                                {{ session('user_email') }}
+                            @else
+                                Udin Saleh
+                            @endif
+                            </span>
                         </div>
                     </div>
                     <hr class="mt-0">
@@ -59,7 +65,7 @@ Content
                         <div class="col-5">
                             <span class="d-inline"><i class="fas fa-envelope mr-2"></i>Email:</span>
                         </div>
-                        <div class="col-7">                   
+                        <div class="col-7">
                             <span>lorem@ipsum.dolor</span>
                         </div>
                     </div>
@@ -70,7 +76,7 @@ Content
                         <div class="col-5">
                             <span class="d-inline"><i class="fas fa-calendar-alt mr-2"></i>Batch:</span>
                         </div>
-                        <div class="col-7">                   
+                        <div class="col-7">
                             <span>2069/2070-7</span>
                         </div>
                     </div>
@@ -81,7 +87,7 @@ Content
                         <div class="col-5">
                             <span class="d-inline"><i class="fas fa-university mr-2"></i>Program:</span>
                         </div>
-                        <div class="col-7">                   
+                        <div class="col-7">
                             <span>Catfish breeding</span>
                         </div>
                     </div>
@@ -92,7 +98,7 @@ Content
                         <div class="col-5">
                             <span class="d-inline"><i class="fas fa-graduation-cap mr-2"></i>Degree</span>
                         </div>
-                        <div class="col-7">                   
+                        <div class="col-7">
                             <span>Doctorate</span>
                         </div>
                     </div>
@@ -103,15 +109,15 @@ Content
                         <div class="col-lg-6 mb-2">
                             <span class="d-inline"><i class="fas fa-map-marker-alt mr-2"></i>Address</span>
                         </div>
-                        <div class="col-lg-6">                   
-                            <span>12th Setapak Avenue, Memory Lane, Chaotic District, Sleepy City, 
+                        <div class="col-lg-6">
+                            <span>12th Setapak Avenue, Memory Lane, Chaotic District, Sleepy City,
                                 Mature Prefecture, Tuvalu 69666 </span>
                         </div>
                     </div>
                     <hr class="mt-0">
                 </div>
                 <div class="mx-auto">
-                  <a href="{{url('user-editprofile')}}"><button class="btn btn-std">Edit Profile</button></a> 
+                  <a href="{{url('user-editprofile')}}"><button class="btn btn-std">Edit Profile</button></a>
                 </div>
             </div>
         </div>

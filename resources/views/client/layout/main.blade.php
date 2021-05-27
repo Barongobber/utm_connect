@@ -53,13 +53,19 @@
           <li class="nav-item dropdown no-arrow">
                 <div class="nav-item dropdown no-arrow">
                   <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">
-                    <span class="d-block d-lg-inline mr-2 text-gray-600 small" >Udin Saleh</span>
+                    <span class="d-block d-lg-inline mr-2 text-gray-600 small" >
+                        @if (session('user_email'))
+                            {{ session('user_email') }}
+                        @else
+                            Udin Saleh
+                        @endif
+                    </span>
                     <div class="d-lg-none dropdown-divider"></div>
                     <img class="border rounded-circle img-profile avatar" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
                       <a class="dropdown-item" href="{{url('user-profile')}}"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                      <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                     </div>
                 </div>
             </li>

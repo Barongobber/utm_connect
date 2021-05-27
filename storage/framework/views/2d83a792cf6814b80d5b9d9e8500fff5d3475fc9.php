@@ -54,17 +54,19 @@
                 <div class="nav-item dropdown no-arrow">
                   <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">
                     <span class="d-block d-lg-inline mr-2 text-gray-600 small" >
-                    <?php if(session('user_email')): ?>
-                        <?php echo e(session('user_email')); ?>
+                        <?php if(session('user_email')): ?>
+                            <?php echo e(session('user_email')); ?>
 
-                    <?php endif; ?>
+                        <?php else: ?>
+                            Udin Saleh
+                        <?php endif; ?>
                     </span>
                     <div class="d-lg-none dropdown-divider"></div>
                     <img class="border rounded-circle img-profile avatar" src="<?php echo e(asset('projectad/assets/img/profile.jpg')); ?>"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
                       <a class="dropdown-item" href="<?php echo e(url('user-profile')); ?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="<?php echo e(url('logout')); ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Log out</a>
+                      <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                     </div>
                 </div>
             </li>
@@ -86,7 +88,7 @@
     </div>
     <div class="modal-body">
       <div class="form-title text-center">
-        <h4>Log in</h4>
+        <h4>Login</h4>
       </div>
       <div class="d-flex flex-column text-center">
         <form>
@@ -96,7 +98,7 @@
           <div class="form-group">
             <input type="password" class="form-control" id="password1" placeholder="Your password...">
           </div>
-          <button type="button" class="btn btn-std btn-block btn-round">Log in</button>
+          <button type="button" class="btn btn-std btn-block btn-round">Login</button>
         </form>
 
         <div class="text-center text-muted delimiter">or use a social network</div>

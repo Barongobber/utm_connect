@@ -23,7 +23,7 @@
             <?php if(auth()->guard()->guest()): ?>
                 <?php if(Route::has('login')): ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo e(route('login')); ?>"><i
-                                class="far fa-user-circle"></i><span><?php echo e(__('Log in')); ?></span></a></li>
+                                class="far fa-user-circle"></i><span><?php echo e(__('Login')); ?></span></a></li>
                 <?php endif; ?>
 
                 <?php if(Route::has('register')): ?>

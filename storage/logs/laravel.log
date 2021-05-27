@@ -10818,3 +10818,153 @@ Stack trace:
 #10 Command line code(0): {main}()
 #11 {main}
 "} 
+[2021-05-27 02:37:06] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:38:05] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:39:05] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:40:06] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:41:05] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:42:06] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:43:06] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:44:06] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:45:07] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 
+[2021-05-27 02:46:06] local.ERROR: Access level to App\Models\Admin::$guard must be public (as in class App\Models\Member) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Access level to App\\Models\\Admin::$guard must be public (as in class App\\Models\\Member) at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\app\\Models\\Admin.php:9)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(143): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct()
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(130): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError()
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(478): ()
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\composer\\ClassLoader.php(346): Composer\\Autoload\\includeFile()
+#5 Command line code(1): Composer\\Autoload\\ClassLoader->loadClass()
+#6 Command line code(1): spl_autoload_call()
+#7 Command line code(1): class_exists()
+#8 Command line code(1): {closure:Command line code:1-1}()
+#9 Command line code(1): array_filter()
+#10 Command line code(0): {main}()
+#11 {main}
+"} 

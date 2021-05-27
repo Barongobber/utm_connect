@@ -84,12 +84,12 @@ return [
 
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Member::class,
+            'model' => App\Models\Admin::class,
         ],
 
         'managements' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Member::class,
+            'model' => App\Models\Management::class,
         ],
 
         'members' => [

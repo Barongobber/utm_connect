@@ -17,7 +17,7 @@ class CreateManagementTable extends Migration
             $table->string('management_matrix_card')->unique()->primary();
             $table->string('management_year');
             $table->unsignedBigInteger('management_role_id');
-            $table->string('divison_name');
+            $table->string('division_name');
             $table->index('management_role_id');
 
             $table->foreign('management_matrix_card')

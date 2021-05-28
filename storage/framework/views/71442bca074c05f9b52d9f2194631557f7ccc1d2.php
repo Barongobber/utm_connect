@@ -80,12 +80,8 @@
                 <div class="nav-item dropdown no-arrow">
                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">
                         <span class="d-none d-lg-inline mr-2 text-gray-600 small">
-                            <?php if(session('user_email')): ?>
-                                <?php echo e(session('user_email')); ?>
+                            <?php echo e(Auth::user()->name); ?>
 
-                            <?php else: ?>
-                                Udin Saleh
-                            <?php endif; ?>
                         </span><img class="border rounded-circle img-profile" src="<?php echo e(url('images/avatars/avatar1.jpeg')); ?>"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item"
                             href="<?php echo e(url('profile')); ?>"><i

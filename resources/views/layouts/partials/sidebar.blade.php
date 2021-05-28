@@ -21,7 +21,9 @@
                         class="fas fa-envelope-square"></i><span>Email Blasting</span></a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('academic')}}"><i
                         class="far fa-newspaper"></i><span>Academic Library</span></a></li>
-            
+            <li class="nav-item"><a class="nav-link" href="{{url('user-home')}}"><i
+                            class="fas fa-user-circle"></i><span>Switch to Member</span></a></li>
+
             @guest
                 @if (Route::has('login'))
                     <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -22,20 +23,21 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
+Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_user');
 
-// Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [LoginController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     //This exclusive for ADMIN
     Route::middleware(['admin'])->group(function () {
-        Route::get('admin', [AdminController::class, 'index']);
+        Route::get('admin', [AdminController::class, 'index'])->name('home');
     });
 
     //This exclusive for MANAGEMENT
     Route::middleware(['management'])->group(function () {
-        Route::get('management', [ManagementController::class, 'index']);
+        Route::get('management', [ManagementController::class, 'index'])->name('home');
 
         Route::get('/profile', [ManagementController::class, 'profilePage'])->name('profile');
 
@@ -43,7 +45,7 @@ Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_
         Route::get('/academic', function () {
             return view('academic');
         });
-        
+
         //upload library
         Route::post('/uploadLib', [App\Http\Controllers\AcademicLibController::class, 'upload'])->name('upload');
 
@@ -93,55 +95,56 @@ Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_
 
     //This exclusive for MEMBER
     Route::middleware(['member'])->group(function () {
-        Route::get('member', [MemberController::class, 'index']);
+        Route::get('member', [MemberController::class, 'index'])->name('home');
     });
 
     Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-// });
+    //client
+    Route::get('/user', function () {
+        return view('client.index');
+    });
+    Route::get('/user-home', function () {
+        return view('client.index');
+    });
 
-Route::get('/', [LoginController::class, 'login'])->name('login');
+    Route::get('/user-news', function(){
+        return view('client.news');
+    });
+    Route::get('/user-view-news', function(){
+        return view('client.view-news');
+    });
 
+    Route::get('/user-events', function(){
+        return view('client.events');
+    });
+    Route::get('/user-view-event', function(){
+        return view('client.view-event');
+    });
 
-//client
-Route::get('/user', function () {
-    return view('client.index');
-});
-Route::get('/user-home', function () {
-    return view('client.index');
-});
+    Route::get('/user-academic', function(){
+        return view('client.academic');
+    });
+    Route::get('/user-elibrary', function(){
+        return view('client.elibrary');
+    });
+    Route::get('/user-about', function(){
+        return view('client.about');
+    });
+    Route::get('/user-aspiration', function(){
+        return view('client.aspiration');
+    });
 
-Route::get('/user-news', function(){
-    return view('client.news');
-});
-Route::get('/user-view-news', function(){
-    return view('client.view-news');
-});
-Route::get('/user-events', function(){
-    return view('client.events');
-});
-Route::get('/user-view-event', function(){
-    return view('client.view-event');
-});
-Route::get('/user-academic', function(){
-    return view('client.academic');
-});
-Route::get('/user-elibrary', function(){
-    return view('client.elibrary');
-});
-Route::get('/user-about', function(){
-    return view('client.about');
-});
-Route::get('/user-aspiration', function(){
-    return view('client.aspiration');
-});
-Route::get('/user-profile', function(){
-    return view('client.profile');
-});
-Route::get('/user-editprofile', function(){
-    return view('client.editprofile');
-});
-Route::get('/user-signup', function(){
-    return view('client.signup');
+    Route::get('/user-profile', function(){
+        return view('client.profile');
+    })->name('user-profile');
+    Route::get('/user-editprofile', function(){
+        return view('client.editprofile');
+    });
+    Route::post('/updateProfile', [MemberController::class, 'updateProfile'])->name('updateProfile');
+
+    Route::get('/user-signup', function(){
+        return view('client.signup');
+    });
 });
 

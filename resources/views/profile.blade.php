@@ -74,46 +74,50 @@
                 <div class="col">
                     <div class="card shadow mb-3">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 font-weight-bold">User Settings</p>
+                            <p class="text-primary m-0 font-weight-bold">User Details</p>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="{{ route('updateProfile') }}" method="POST">
+                            @csrf
                                 <div class="form-row">
                                     <div class="col">
-                                        <div class="form-group"><label for="username"><strong>Username</strong></label><input class="form-control" type="text" id="username" placeholder="user.name" name="username"></div>
+                                        <div class="form-group"><label for="fullName"><strong>Full Name</strong></label><input class="form-control" type="text" id="fullName" placeholder="{{ Auth::user()->name }}" name="fullName" disabled></div>
                                     </div>
                                     <div class="col">
-                                        <div class="form-group"><label for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="email" placeholder="{{ $user_desc->email }}" name="email"></div>
+                                        <div class="form-group"><label for="matric"><strong>Matric</strong></label><input class="form-control" type="text" id="matric" placeholder="{{ Auth::user()->matrix_card }}" name="matric" disabled></div>
                                     </div>
                                 </div>
+                                <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="text" id="address" value="{{ Auth::user()->address }}" name="address"></div>
                                 <div class="form-row">
                                     <div class="col">
-                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" id="first_name" placeholder="{{ $user_desc->name }}" name="first_name"></div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group"><label for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" id="last_name" placeholder="Doe" name="last_name"></div>
+                                        <div class="form-group"><label for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="email" value="{{ Auth::user()->email }}" name="email"></div>
                                     </div>
                                 </div>
                                 <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(230,32,43);border-color: rgb(230,32,43);">Save Settings</button></div>
+                                <input type="text" name="route" id="route" value="profile" hidden>
                             </form>
                         </div>
                     </div>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 font-weight-bold">Contact Settings</p>
+                            <p class="text-primary m-0 font-weight-bold">Management Details</p>
                         </div>
                         <div class="card-body">
                             <form>
-                                <div class="form-group"><label for="address"><strong>Address</strong></label><input class="form-control" type="text" id="address" placeholder="{{ $user_desc->address }}" name="address"></div>
                                 <div class="form-row">
                                     <div class="col">
-                                        <div class="form-group"><label for="city"><strong>City</strong></label><input class="form-control" type="text" id="city" placeholder="Los Angeles" name="city"></div>
+                                        <div class="form-group"><label for="management_year"><strong>Management Year</strong></label><input class="form-control" type="text" id="management_year" placeholder="{{ $user_desc['management_desc']->management_year }}" name="management_year" disabled></div>
                                     </div>
                                     <div class="col">
-                                        <div class="form-group"><label for="country"><strong>Country</strong></label><input class="form-control" type="text" id="country" placeholder="USA" name="country"></div>
+                                        <div class="form-group"><label for="management_role"><strong>Management Role</strong></label><input class="form-control" type="text" id="management_role" placeholder="{{ $user_desc['role_desc']->role_desc }}" name="management_role" disabled></div>
                                     </div>
                                 </div>
-                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(230,32,43);border-color: rgb(230,32,43);">Save&nbsp;Settings</button></div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="division_name"><strong>Division Name</strong></label><input class="form-control" type="text" id="division_name" placeholder="{{ $user_desc['management_desc']->division_name }}" name="division_name" disabled></div>
+                                    </div>
+                                </div>
+                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(230,32,43);border-color: rgb(230,32,43);" hidden>Save&nbsp;Settings</button></div>
                             </form>
                         </div>
                     </div>

@@ -13,8 +13,8 @@ class Member extends Authenticatable
 {
     public $table = 'member';
     public $guard = 'member';
+    protected $primaryKey  = 'matrix_card';
 
-    protected $primary_key = 'matrix_card';
     public $incrementing = false;
     protected $keyType = 'string';
 

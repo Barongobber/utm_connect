@@ -17,6 +17,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         $uga = $request->session()->get('user_access');
+
         if($uga != 'admin'){
             return redirect('logout');
         }

@@ -11,6 +11,7 @@ use App\Models\Member;
 class Management extends Member
 {
     public $table = 'management';
+    protected $primaryKey = 'management_matrix_card';
     public $guard = 'management';
     use HasFactory;
 
@@ -18,7 +19,7 @@ class Management extends Member
         'management_matrix_card',
         'management_year',
         'management_role_id',
-        'divison_name'
+        'division_name'
     ];
 
     public function role(){

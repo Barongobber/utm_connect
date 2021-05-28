@@ -80,11 +80,7 @@
                 <div class="nav-item dropdown no-arrow">
                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">
                         <span class="d-none d-lg-inline mr-2 text-gray-600 small">
-                            @if (session('user_email'))
-                                {{ session('user_email') }}
-                            @else
-                                Udin Saleh
-                            @endif
+                            {{ Auth::user()->name }}
                         </span><img class="border rounded-circle img-profile" src="{{ url('images/avatars/avatar1.jpeg') }}"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item"
                             href="{{url('profile')}}"><i

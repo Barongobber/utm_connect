@@ -46,9 +46,9 @@ class LoginController extends Controller
 
     public function login()
     {
-        // if(auth()->check()){
-        //     return redirect('home');
-        // }
+        if(auth()->check()){
+            return redirect('home');
+        }
         return view('auth.login');
     }
 

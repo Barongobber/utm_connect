@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
+use App\Models\Management;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,12 +12,15 @@ class ManagementController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('home', compact('user'));
+        return view('main_dashboard', compact('user'));
     }
     public function profilePage(Request $r){
-        $umatric = $r->session()->get('user_matric');
-        $user = Member::where('matrix_card', $umatric)->get();
-        $user_desc = $user[0];
+        $management = Management::where('management_matrix_card', Auth::user()->matrix_card)->get();
+        $role = Role::where('role_id', $management[0]->management_role_id)->get();
+        $user_desc = [
+            'management_desc' => $management[0],
+            'role_desc' => $role[0],
+        ];
 
         return view('profile', compact('user_desc'));
     }

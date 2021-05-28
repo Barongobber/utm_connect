@@ -16,8 +16,6 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        dd(Auth::user());
-
     }
 
     /**
@@ -28,8 +26,7 @@ class HomeController extends Controller
     public function index(Request $r)
     {
         $role = $r->session()->get('user_access');
-        
-        
+
         if($role == "admin"){
             return redirect('admin');
         } else if($role == "management"){

@@ -20,8 +20,6 @@ use Composer\Semver\VersionParser;
 
 
 
-
-
 class InstalledVersions
 {
 private static $installed = array (
@@ -32,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a1cb58b47bfcab5513e32f9976df3742f1c08d8c',
+    'reference' => 'd823afed95bc3bfb15e45d3b7a52ccdf9dd8a1b7',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -168,6 +166,15 @@ private static $installed = array (
       ),
       'reference' => 'c13c0be93cff50f88bbd70827d993026821914dd',
     ),
+    'firebase/php-jwt' => 
+    array (
+      'pretty_version' => 'v5.2.1',
+      'version' => '5.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f42c9110abe98dd6cfe9053c49bc86acc70b2d23',
+    ),
     'fruitcake/laravel-cors' => 
     array (
       'pretty_version' => 'v2.0.4',
@@ -176,6 +183,33 @@ private static $installed = array (
       array (
       ),
       'reference' => 'a8ccedc7ca95189ead0e407c43b530dc17791d6a',
+    ),
+    'google/apiclient' => 
+    array (
+      'pretty_version' => 'v2.9.1',
+      'version' => '2.9.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2fb6e702aca5d68203fa737f89f6f774022494c6',
+    ),
+    'google/apiclient-services' => 
+    array (
+      'pretty_version' => 'v0.176.0',
+      'version' => '0.176.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '316cbf9b02c575a140d8cbeca48a3ca0070fcd5a',
+    ),
+    'google/auth' => 
+    array (
+      'pretty_version' => 'v1.15.1',
+      'version' => '1.15.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4e0c9367719df9703e96f5ad613041b87742471c',
     ),
     'graham-campbell/result-type' => 
     array (
@@ -462,7 +496,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a1cb58b47bfcab5513e32f9976df3742f1c08d8c',
+      'reference' => 'd823afed95bc3bfb15e45d3b7a52ccdf9dd8a1b7',
     ),
     'laravel/sail' => 
     array (
@@ -508,6 +542,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '9be3b16c877d477357c015cec057548cf9b2a14a',
+    ),
+    'league/flysystem-cached-adapter' => 
+    array (
+      'pretty_version' => '1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd1925efb2207ac4be3ad0c40b8277175f99ffaff',
     ),
     'league/mime-type-detection' => 
     array (
@@ -556,6 +599,24 @@ private static $installed = array (
         0 => '1.10.2',
       ),
     ),
+    'nao-pon/flysystem-cached-extra' => 
+    array (
+      'pretty_version' => '1.0.3',
+      'version' => '1.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '189abdafa0a86d92781e148ee8740ef80f4c5859',
+    ),
+    'nao-pon/flysystem-google-drive' => 
+    array (
+      'pretty_version' => '1.1.13',
+      'version' => '1.1.13.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'bb812339ecf06540ed096f71403f10fcbcc590f3',
+    ),
     'nesbot/carbon' => 
     array (
       'pretty_version' => '2.48.1',
@@ -591,6 +652,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '06e2ebd25f2869e54a306dda991f7db58066f7f6',
+    ),
+    'paragonie/constant_time_encoding' => 
+    array (
+      'pretty_version' => 'v2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c',
+    ),
+    'paragonie/random_compat' => 
+    array (
+      'pretty_version' => 'v9.99.100',
+      'version' => '9.99.100.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
     ),
     'phar-io/manifest' => 
     array (
@@ -645,6 +724,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
+    ),
+    'phpseclib/phpseclib' => 
+    array (
+      'pretty_version' => '3.0.8',
+      'version' => '3.0.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd9615a6fb970d9933866ca8b4036ec3407b020b6',
     ),
     'phpspec/prophecy' => 
     array (
@@ -708,6 +796,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c73c6737305e779771147af66c96ca6a7ed8a741',
+    ),
+    'psr/cache' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
     ),
     'psr/container' => 
     array (
@@ -1315,6 +1412,7 @@ foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
 
+
 if (1 === \count($packages)) {
 return $packages[0];
 }
@@ -1506,7 +1604,6 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
-
 
 
 

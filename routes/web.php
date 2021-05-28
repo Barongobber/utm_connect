@@ -39,6 +39,14 @@ Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_
 
         Route::get('/profile', [ManagementController::class, 'profilePage'])->name('profile');
 
+        //Academic Library
+        Route::get('/academic', function () {
+            return view('academic');
+        });
+        
+        //upload library
+        Route::post('/uploadLib', [App\Http\Controllers\AcademicLibController::class, 'upload'])->name('upload');
+
         //forms
         Route::get('/register', function () {
             return view('register');

@@ -26,6 +26,14 @@ Install all the dependencies using composer
     composer install
 ```
 
+```Google Api
+    composer require google/apiclient
+```
+
+```Flysystem Adapter for Google Drive
+    composer require nao-pon/flysystem-google-drive:~1.1
+```
+
 Copy the example env file and make the required configuration changes in the .env file
 
 ```bash

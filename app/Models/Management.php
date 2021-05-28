@@ -18,7 +18,7 @@ class Management extends Member
         'management_matrix_card',
         'management_year',
         'management_role_id',
-        'divison_name'
+        'division_name'
     ];
 
     public function role(){

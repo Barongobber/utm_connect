@@ -38,10 +38,7 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-        //$session = Member::where('email', $email)->where('password', bcrypt($password))->get();
         $auth = Auth::attempt(['email' => $email, 'password' => $password]);
-        // dd($request);
 
         if($auth){
             $ga = auth()->user()->access_grant;
@@ -75,8 +72,6 @@ class LoginController extends Controller
             return redirect('management');
         } else if($role == "member"){
             return redirect('member');
-        } else {
-            return redirect('logout');
         }
 
         return view('home');

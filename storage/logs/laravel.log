@@ -13972,3 +13972,33 @@ Stack trace:
 #57 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\server.php(21): require_once('Z:\\\\KULIAH OOO\\\\S...')
 #58 {main}
 "} 
+[2021-05-28 00:41:42] local.ERROR: There are no commands defined in the "log" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"log\" namespace. at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php:605)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(656): Symfony\\Component\\Console\\Application->findNamespace('log')
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(254): Symfony\\Component\\Console\\Application->find('log:clear')
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(166): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(92): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-05-28 00:42:11] local.ERROR: There are no commands defined in the "clear" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"clear\" namespace. at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php:605)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(656): Symfony\\Component\\Console\\Application->findNamespace('clear')
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(254): Symfony\\Component\\Console\\Application->find('clear:cache')
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(166): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(92): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-05-28 00:43:50] local.ERROR: There are no commands defined in the "clear" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"clear\" namespace. at Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php:605)
+[stacktrace]
+#0 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(656): Symfony\\Component\\Console\\Application->findNamespace('clear')
+#1 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(254): Symfony\\Component\\Console\\Application->find('clear:log')
+#2 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\symfony\\console\\Application.php(166): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(92): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 

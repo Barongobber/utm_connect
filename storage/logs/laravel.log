@@ -14125,7 +14125,6 @@ esources\\views/profile.blade.php(87): Illuminate\\Foundation\\Bootstrap\\Handle
 #56 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #57 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\server.php(21): require_once('Z:\\\\KULIAH OOO\\\\S...')
 #58 {main}
-"}
 #29 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(141): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
 #30 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
 #31 Z:\\KULIAH OOO\\Sem5\\AD\\Project\\ApplicationDevelopment\\ApplicationDevelopment\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))

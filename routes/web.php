@@ -27,7 +27,7 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_user');
 
 // Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [LoginController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     //This exclusive for ADMIN
     Route::middleware(['admin'])->group(function () {

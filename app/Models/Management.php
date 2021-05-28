@@ -11,6 +11,7 @@ use App\Models\Member;
 class Management extends Member
 {
     public $table = 'management';
+    protected $primaryKey = 'management_matrix_card';
     public $guard = 'management';
     use HasFactory;
 

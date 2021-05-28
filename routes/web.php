@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,7 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_user');
 
 // Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [LoginController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     //This exclusive for ADMIN
     Route::middleware(['admin'])->group(function () {

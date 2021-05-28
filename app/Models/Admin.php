@@ -10,6 +10,7 @@ class Admin extends Member
 {
     use HasFactory;
     public $table = 'admin';
+    protected $primaryKey = 'matrix_card';
     public $guard = 'admin';
 
     protected $fillable = [

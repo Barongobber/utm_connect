@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EventController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,51 @@ Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    //client
+    Route::get('/user', function () {
+        return view('client.index');
+    });
+    Route::get('/user-home', function () {
+        return view('client.index');
+    });
+
+    Route::get('/user-news', function(){
+        return view('client.news');
+    });
+    Route::get('/user-view-news', function(){
+        return view('client.view-news');
+    });
+
+    Route::get('/user-events', [EventController::class, 'allNews'])->name('user-events');
+    Route::get('/user-view-event', function(){
+        return view('client.view-event');
+    });
+
+    Route::get('/user-academic', function(){
+        return view('client.academic');
+    });
+    Route::get('/user-elibrary', function(){
+        return view('client.elibrary');
+    });
+    Route::get('/user-about', function(){
+        return view('client.about');
+    });
+    Route::get('/user-aspiration', function(){
+        return view('client.aspiration');
+    });
+
+    Route::get('/user-profile', function(){
+        return view('client.profile');
+    })->name('user-profile');
+    Route::get('/user-editprofile', function(){
+        return view('client.editprofile');
+    });
+    Route::post('/updateProfile', [MemberController::class, 'updateProfile'])->name('updateProfile');
+
+    Route::get('/user-signup', function(){
+        return view('client.signup');
+    });
 
     //This exclusive for ADMIN
     Route::middleware(['admin'])->group(function () {
@@ -100,51 +146,5 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-    //client
-    Route::get('/user', function () {
-        return view('client.index');
-    });
-    Route::get('/user-home', function () {
-        return view('client.index');
-    });
-
-    Route::get('/user-news', function(){
-        return view('client.news');
-    });
-    Route::get('/user-view-news', function(){
-        return view('client.view-news');
-    });
-
-    Route::get('/user-events', function(){
-        return view('client.events');
-    });
-    Route::get('/user-view-event', function(){
-        return view('client.view-event');
-    });
-
-    Route::get('/user-academic', function(){
-        return view('client.academic');
-    });
-    Route::get('/user-elibrary', function(){
-        return view('client.elibrary');
-    });
-    Route::get('/user-about', function(){
-        return view('client.about');
-    });
-    Route::get('/user-aspiration', function(){
-        return view('client.aspiration');
-    });
-
-    Route::get('/user-profile', function(){
-        return view('client.profile');
-    })->name('user-profile');
-    Route::get('/user-editprofile', function(){
-        return view('client.editprofile');
-    });
-    Route::post('/updateProfile', [MemberController::class, 'updateProfile'])->name('updateProfile');
-
-    Route::get('/user-signup', function(){
-        return view('client.signup');
-    });
 });
 

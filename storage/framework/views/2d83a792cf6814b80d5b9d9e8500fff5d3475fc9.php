@@ -23,7 +23,7 @@
 <body>
 <section id="navMenu">
     <nav class="nav-head navbar fixed-top navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="index.php"><img src="<?php echo e(asset('projectad/assets/icon/android-icon-72x72.png')); ?>" /> UTM CONNECT</a>
+      <a class="navbar-brand" href="<?php echo e(url('user-home')); ?>"><img src="<?php echo e(asset('projectad/assets/icon/android-icon-72x72.png')); ?>" /> UTM CONNECT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,6 +65,9 @@
                     <img class="border rounded-circle img-profile avatar" src="<?php echo e(asset('projectad/assets/img/profile.jpg')); ?>"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
                       <a class="dropdown-item" href="<?php echo e(url('user-profile')); ?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                      <?php if(session('user_access') == "management"): ?>
+                        <a class="dropdown-item" href="<?php echo e(route('home')); ?>"><i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Swicth to Management</a>
+                      <?php endif; ?>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                     </div>

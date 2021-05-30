@@ -10,6 +10,7 @@ class Feedback extends Model
 {
     use HasFactory;
     public $table = 'feedback';
+    protected $primaryKey = 'matrix_card_feedback';
 
     protected $fillable = [
         'matrix_card_feedback',

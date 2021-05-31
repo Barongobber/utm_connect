@@ -202,11 +202,7 @@
                     <div class="row">
                       <div class="col-3 feedback-profile">
                         <span class="d-block text-gray-600 small mx-auto mb-2" >
-                            @if (session('user_email'))
-                                {{ session('user_email') }}
-                            @else
-                                Udin Saleh
-                            @endif
+                            Udin Saleh
                         </span>
                         <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                       </div>

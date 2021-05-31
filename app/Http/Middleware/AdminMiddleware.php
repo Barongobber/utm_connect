@@ -19,6 +19,9 @@ class AdminMiddleware
         $uga = $request->session()->get('user_access');
 
         if($uga != 'admin'){
+            if($uga == 'management' || $uga == 'member'){
+                return redirect('home');
+            }
             return redirect('logout');
         }
         return $next($request);

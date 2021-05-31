@@ -20,15 +20,15 @@ class RedirectIfAuthenticated
 
     public function handle(Request $request, Closure $next, $guard = null)
     {
-        if ($guard == "admin" && Auth::guard($guard)->check()) {
-            return redirect('/home');
-        }
-        if ($guard == "management" && Auth::guard($guard)->check()) {
-            return redirect('/home');
-        }
-        if ($guard == "member" && Auth::guard($guard)->check()) {
-            return redirect('/home');
-        }
+        // if ($guard == "admin" && Auth::guard($guard)->check()) {
+        //     return redirect('/home');
+        // }
+        // if ($guard == "management" && Auth::guard($guard)->check()) {
+        //     return redirect('/home');
+        // }
+        // if ($guard == "member" && Auth::guard($guard)->check()) {
+        //     return redirect('/home');
+        // }
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }

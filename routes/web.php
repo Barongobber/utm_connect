@@ -29,7 +29,7 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_user');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [LoginController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     //client
     Route::get('/user', function () {
@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('/user-home', function () {
         return view('client.index');
-    });
+    })->name('user-home');
 
     Route::get('/user-news', function(){
         return view('client.news');

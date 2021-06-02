@@ -52,7 +52,7 @@ Run the database migrations (**Set the database connection in .env before migrat
     php artisan migrate
 ```
 
-Seed the database with seeder (See first if the file in database/seeders/DatabaseSeeder.php `run()` functino is commented or not, if So uncomment it first)
+Seed the database with seeder (See first if the file in database/seeders/DatabaseSeeder.php `run()` function is commented or not, if So uncomment it first)
 ```bash
     php artisan db:seed
 ```

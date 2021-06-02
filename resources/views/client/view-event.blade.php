@@ -7,7 +7,7 @@
 <section id="header">
   <div class="container-fluid header-container">
     <div class="header-head">
-      <h1 class="header-title">Elegant Event</h1>
+      <h1 class="header-title">{{ $eventDesc['event']->event_title }}</h1>
     </div>
   </div>
 </section>
@@ -22,38 +22,36 @@
         <div class="card mb-3 list-card view-event-card">
           <div class="row no-gutters event-card">
             <div class="col-lg-4 col-md-4 col-sm-4">
-              <img class="img-fluid event-card-img text-left" src="{{asset('projectad/events/img/event.jpg')}}" class="card-img-right" alt="">
+              <img class="img-fluid event-card-img text-left" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic1) }}" class="card-img-right" alt="">
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8">
               <div class="card-body event-card-body">
-                <h4 class="event-title">Elegant Event</h4>
+                <h4 class="event-title">{{ $eventDesc['event']->event_title }}</h4>
                 <div class="event-card-details">
-                      <span class="post-details"> Category: <p class="event-category">Volunteer</p></span>
+                      <span class="post-details"> Category: <p class="event-category">{{ $eventDesc['event']->event_category }}</p></span>
                 </div>
                 <div class="row event-description justify-content-center">
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
                     <span style="font-weight:bold;">Date: </span>
-                    <span style="display:block;">The date</span>
+                    <span style="display:block;">{{ $eventDesc['event']->event_date }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
                     <span style="font-weight:bold;">Venue:</span>
-                    <span style="display:block;">The venue</span>
+                    <span style="display:block;">{{ $eventDesc['event']->event_venue }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
-                    <span style="font-weight:bold;">Time: </span>
-                    <span style="display:block;">The time</span>
+                    <span style="font-weight:bold;">Posted on: </span>
+                    <span style="display:block;">{{ $eventDesc['event']->posted_on }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
-                    <span style="font-weight:bold;">Link:</span>
-                    <span style="display:block;">The link if any</span>
+                    <span style="font-weight:bold;">Registration Closed:</span>
+                    <span style="display:block;">{{ $eventDesc['event']->closed_on }}</span>
                   </div>
 
                   <div class="col-lg-12 col-md-12 col-md-12">
                     <h6>Event Description</h6>
                     <p class="card-text event-desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
+                      {{ $eventDesc['event']->event_details }}.
                     </p>
                   </div>
                 </div>
@@ -62,15 +60,19 @@
 
           </div>
           <div class="text-right event-button">
-            <a class="btn btn-red typeform-share button" href="https://form.typeform.com/to/kX2o9C6n?typeform-medium=embed-snippet" data-mode="popup" data-size="100" target="_blank">Apply as participant </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
-            <a class="btn btn-red typeform-share button" href="https://form.typeform.com/to/kX2o9C6n?typeform-medium=embed-snippet" data-mode="popup" data-size="100" target="_blank">Apply as committee </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+            @if ($eventDesc['event']->open_for == "Participants" && $eventDesc['open'])
+              <a class="btn btn-red typeform-share button" href="{{ $eventDesc['event']->event_url }}" data-mode="popup" data-size="100" target="_blank">Apply as participant </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+            @elseif ($eventDesc['event']->open_for == "Committee" && $eventDesc['open'])
+              <a class="btn btn-red typeform-share button" href="{{ $eventDesc['event']->event_url }}" data-mode="popup" data-size="100" target="_blank">Apply as committee </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+            @endif
           </div>
         </div>
       </div>
-<!-- For past events- Documentation and Feedback -->
+      <!-- For past events- Documentation and Feedback -->
+      @if ($eventDesc['done'])
       <div class="container-fluid list-container">
-      <div class="row justify-content-center">
-        <div class="col-12">
+        <div class="row justify-content-center">
+          <div class="col-12">
             <div class="card mb-3 list-card view-event-card">
               <h4 class="text-align-left mt-3">Documentation</h4>
               <hr class="mt-1 dotted-ruler width-1">
@@ -79,21 +81,21 @@
                   <div class="carousel-item active">
                     <img
                       class="event-slide-img"
-                      src="{{asset('projectad/news/img/1.jpg')}}"
+                      src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic1) }}"
                       alt="news"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="event-slide-img"
-                      src="{{asset('projectad/news/img/2.jpg')}}"
+                      src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic2) }}"
                       alt="news"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="event-slide-img"
-                      src="{{asset('projectad/news/img/3.jpg')}}"
+                      src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic3) }}"
                       alt="news"
                     />
                   </div>
@@ -105,7 +107,7 @@
                       class="selected"
                       data-slide-to="0"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{asset('projectad/news/img/1.jpg')}}" alt=""
+                      ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic1) }}" alt=""
                     /></a>
                   </li>
                   <li class="list-inline-item">
@@ -113,7 +115,7 @@
                       id="carousel-selector-1"
                       data-slide-to="1"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{asset('projectad/news/img/2.jpg')}}" alt=""
+                      ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic2) }}" alt=""
                     /></a>
                   </li>
                   <li class="list-inline-item">
@@ -121,7 +123,7 @@
                       id="carousel-selector-2"
                       data-slide-to="2"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{asset('projectad/news/img/3.jpg')}}" alt=""
+                      ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic3) }}" alt=""
                     /></a>
                   </li>
                 </ol>
@@ -137,13 +139,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-3 feedback-profile">
-                        <span class="d-block text-gray-600 small mx-auto mb-2" >
-                            @if (session('user_email'))
-                                {{ session('user_email') }}
-                            @else
-                                Udin Saleh
-                            @endif
-                        </span>
+                        <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
                         <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                       </div>
                       <div class="col-9">
@@ -169,13 +165,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-3 feedback-profile">
-                        <span class="d-block text-gray-600 small mx-auto mb-2" >
-                            @if (session('user_email'))
-                                {{ session('user_email') }}
-                            @else
-                                Udin Saleh
-                            @endif
-                        </span>
+                        <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
                         <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                       </div>
                       <div class="col-9">
@@ -201,9 +191,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-3 feedback-profile">
-                        <span class="d-block text-gray-600 small mx-auto mb-2" >
-                            Udin Saleh
-                        </span>
+                        <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
                         <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                       </div>
                       <div class="col-9">
@@ -227,9 +215,12 @@
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
+      @endif
     </div>
+  </div>
 </section>
 <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">

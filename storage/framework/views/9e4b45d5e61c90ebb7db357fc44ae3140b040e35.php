@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Home'); ?>
 
 
@@ -184,189 +182,93 @@
         <div class="carousel-inner">
           <div class="event-item carousel-item active">
             <div class="row event-preview-row">
+              <!--first 3 Event Card-->
+              <?php $__currentLoopData = $member['events3']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <div class="col-lg-4 event-preview-column">
                 <div class="card">
                   <div class="card-header event-header">
-                    <h4 class="event-title"><a href="">Event</a></h4>
+                    <h4 class="event-title"><a href="<?php echo e(route('user-view-event', $event->event_id)); ?>"><?php echo e($event->event_title); ?></a></h4>
 
                   </div>
                   <div class="card-body event-body">
-                      <img class="img-fluid" src="<?php echo e(asset('projectad/events/img/event.jpg')); ?>" alt="">
+                      <img class="img-fluid" src="<?php echo e(asset('images/event/' . $event->event_id . '/' . $event->event_pic1)); ?>" alt="">
                       <div class="event-description">
                         <div class="row">
                           <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
                             <span style="font-weight:bold;">Date: </span>
-                            <span style="display:block;">The date</span>
+                            <span style="display:block;"><?php echo e($event->event_date); ?></span>
                           </div>
                           <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
                             <span style="font-weight:bold;">Venue:</span>
-                            <span style="display:block;">The venue</span>
+                            <span style="display:block;"><?php echo e($event->event_venue); ?></span>
                           </div>
                         </div>
                       </div>
                       <div class="text-right">
-                        <a href=""><button class="btn btn-red">Check out event</button></a>
+                        <a href="<?php echo e(route('user-view-event', $event->event_id)); ?>"><button class="btn btn-red">Check out event</button></a>
                       </div>
                   </div>
 
                 </div>
               </div>
-              <div class="col-lg-4 event-preview-column">
-                <div class="card">
-                  <div class="card-header event-header">
-                    <h4 class="event-title"><a href="">Event</a></h4>
-
-                  </div>
-                  <div class="card-body event-body">
-                      <img class="img-fluid" src="<?php echo e(asset('projectad/events/img/musicevent.jpg')); ?>" alt="">
-                      <div class="event-description">
-                        <div class="row">
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Date: </span>
-                            <span style="display:block;">The date</span>
-                          </div>
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Venue:</span>
-                            <span style="display:block;">The venue</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-right">
-                        <a href=""><button class="btn btn-red">Check out event</button></a>
-                      </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-lg-4 event-preview-column">
-                <div class="card">
-                  <div class="card-header event-header">
-                    <h4 class="event-title"><a href="">Event</a></h4>
-
-                  </div>
-                  <div class="card-body event-body">
-                      <img class="img-fluid" src="<?php echo e(asset('projectad/events/img/event.jpg')); ?>" alt="">
-                      <div class="event-description">
-                        <div class="row">
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Date: </span>
-                            <span style="display:block;">The date</span>
-                          </div>
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Venue:</span>
-                            <span style="display:block;">The venue</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-right">
-                        <a href=""><button class="btn btn-red">Check out event</button></a>
-                      </div>
-                    </div>
-
-                </div>
-              </div>
+              <?php if($index == 2): ?>
+                <?php break; ?>
+              <?php endif; ?>
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
           </div>
+          <?php if(count($member['events3']) > 3): ?>
           <div class="event-item carousel-item">
             <div class="row event-preview-row">
+              <?php $__currentLoopData = $member['events3']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php if($index > 2): ?>
               <div class="col-lg-4 event-preview-column">
                 <div class="card">
                   <div class="card-header event-header">
-                    <h4 class="event-title"><a href="">Event</a></h4>
+                    <h4 class="event-title"><a href="<?php echo e(route('user-view-event', $event->event_id)); ?>"><?php echo e($event->event_title); ?></a></h4>
 
                   </div>
                   <div class="card-body event-body">
-                      <img class="img-fluid" src="<?php echo e(asset('projectad/events/img/musicevent.jpg')); ?>" alt="">
+                      <img class="img-fluid" src="<?php echo e(asset('images/event/' . $event->event_id . '/' . $event->event_pic1)); ?>" alt="">
                       <div class="event-description">
                         <div class="row">
                           <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
                             <span style="font-weight:bold;">Date: </span>
-                            <span style="display:block;">The date</span>
+                            <span style="display:block;"><?php echo e($event->event_date); ?></span>
                           </div>
                           <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
                             <span style="font-weight:bold;">Venue:</span>
-                            <span style="display:block;">The venue</span>
+                            <span style="display:block;"><?php echo e($event->event_venue); ?></span>
                           </div>
                         </div>
                       </div>
                       <div class="text-right">
-                        <a href=""><button class="btn btn-red">Check out event</button></a>
+                        <a href="<?php echo e(route('user-view-event', $event->event_id)); ?>"><button class="btn btn-red">Check out event</button></a>
                       </div>
                   </div>
 
                 </div>
               </div>
-              <div class="col-lg-4 event-preview-column">
-                <div class="card">
-                  <div class="card-header event-header">
-                    <h4 class="event-title"><a href="">Event</a></h4>
-
-                  </div>
-                  <div class="card-body event-body">
-                      <img class="img-fluid" src="<?php echo e(asset('projectad/events/img/event.jpg')); ?>" alt="">
-                      <div class="event-description">
-                        <div class="row">
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Date: </span>
-                            <span style="display:block;">The date</span>
-                          </div>
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Venue:</span>
-                            <span style="display:block;">The venue</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-right">
-                          <a href=""><button class="btn btn-red">Check out event</button></a>
-                      </div>
-                      </div>
-
-                </div>
-              </div>
-              <div class="col-lg-4 event-preview-column">
-                <div class="card">
-                  <div class="card-header event-header">
-                    <h4 class="event-title"><a href="">Event</a></h4>
-
-                  </div>
-                  <div class="card-body event-body">
-                      <img class="img-fluid" src="<?php echo e(asset('projectad/events/img/musicevent.jpg')); ?>" alt="">
-                      <div class="event-description">
-                        <div class="row">
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Date: </span>
-                            <span style="display:block;">The date</span>
-                          </div>
-                          <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
-                            <span style="font-weight:bold;">Venue:</span>
-                            <span style="display:block;">The venue</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-right">
-                          <a href=""><button class="btn btn-red">Check out event</button></a>
-                      </div>
-
-                  </div>
-
-                </div>
-              </div>
+              <?php endif; ?>
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
           </div>
-          </div>
-            <a class="carousel-control-prev" href="#carouselEvent" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselEvent" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+          <?php endif; ?>
         </div>
-        <div class="text-center">
-            <a class="buttons" href="<?php echo e(url('user-events')); ?>"><button class="btn btn-std btn-lg mr-0 ml-0">See all events</button></a>
-        </div>
+        <a class="carousel-control-prev" href="#carouselEvent" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselEvent" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="text-center">
+        <a class="buttons" href="<?php echo e(url('user-events')); ?>"><button class="btn btn-std btn-lg mr-0 ml-0">See all events</button></a>
+      </div>
 
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('client.layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH Z:\KULIAH OOO\Sem5\AD\Project\ApplicationDevelopment\ApplicationDevelopment\resources\views/client/index.blade.php ENDPATH**/ ?>

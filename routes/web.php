@@ -35,9 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user', function () {
         return view('client.index');
     });
-    Route::get('/user-home', function () {
-        return view('client.index');
-    })->name('user-home');
+    Route::get('/user-home', [MemberController::class, 'index'])->name('user-home');
 
     Route::get('/user-news', function(){
         return view('client.news');
@@ -46,10 +44,8 @@ Route::middleware(['auth'])->group(function () {
         return view('client.view-news');
     });
 
-    Route::get('/user-events', [EventController::class, 'allNews'])->name('user-events');
-    Route::get('/user-view-event', function(){
-        return view('client.view-event');
-    });
+    Route::get('/user-events', [EventController::class, 'allEvent'])->name('user-events');
+    Route::get('/user-view-event/{id}', [EventController::class, 'anEvent'])->name('user-view-event');
 
     Route::get('/user-academic', function(){
         return view('client.academic');

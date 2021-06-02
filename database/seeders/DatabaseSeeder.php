@@ -80,36 +80,52 @@ class DatabaseSeeder extends Seeder
         //     'division_name' => 'div1',
         // ]);
 
-        DB::table('event')->insert([
-            'event_id' => 1,
-            'event_title' => 'e1title',
-            'event_category'=> 'Sport',
-            'event_venue' => 'e1venue',
-            'posted_on' => Carbon::parse('2021-03-03'),
-            'open_for' => 'Participants',
-            'closed_on' => Carbon::parse('2021-04-04'),
-            'event_details' => 'e1details',
-            'event_url' => 'e1url',
-            'event_date' => Carbon::parse('2021-05-05'),
-            'event_pic1' => 'e1pic1.PNG',
-            'event_pic2' => 'e1pic2.PNG',
-            'event_pic3' => 'e1pic3.PNG',
-        ]);
+        // DB::table('event')->insert([
+        //     'event_id' => 1,
+        //     'event_title' => 'e1title',
+        //     'event_category'=> 'Sport',
+        //     'event_venue' => 'e1venue',
+        //     'posted_on' => Carbon::parse('2021-03-03'),
+        //     'open_for' => 'Participants',
+        //     'closed_on' => Carbon::parse('2021-04-04'),
+        //     'event_details' => 'e1details',
+        //     'event_url' => 'https://form.typeform.com/to/bOOqUGlh?typeform-medium=embed-snippet',
+        //     'event_date' => Carbon::parse('2021-05-05'),
+        //     'event_pic1' => 'e1pic1.PNG',
+        //     'event_pic2' => 'e1pic2.PNG',
+        //     'event_pic3' => 'e1pic3.PNG',
+        // ]);
 
-        DB::table('event')->insert([
-            'event_id' => 2,
-            'event_title' => 'e2title',
-            'event_category'=> 'Academic',
-            'event_venue' => 'e2venue',
-            'posted_on' => Carbon::parse('2021-04-04'),
-            'open_for' => 'Committee',
-            'closed_on' => Carbon::parse('2021-05-05'),
-            'event_details' => 'e2details',
-            'event_url' => 'e2url',
-            'event_date' => Carbon::parse('2021-06-06'),
-            'event_pic1' => 'e2pic1.PNG',
-            'event_pic2' => 'e2pic2.PNG',
-            'event_pic3' => 'e2pic3.PNG',
-        ]);
+        // DB::table('event')->insert([
+        //     'event_id' => 2,
+        //     'event_title' => 'e2title',
+        //     'event_category'=> 'Academic',
+        //     'event_venue' => 'e2venue',
+        //     'posted_on' => Carbon::parse('2021-10-10'),
+        //     'open_for' => 'Committee',
+        //     'closed_on' => Carbon::parse('2021-11-11'),
+        //     'event_details' => 'e2details',
+        //     'event_url' => 'https://form.typeform.com/to/sWBiD0dR?typeform-medium=embed-snippet',
+        //     'event_date' => Carbon::parse('2021-12-12'),
+        //     'event_pic1' => 'e2pic1.PNG',
+        //     'event_pic2' => 'e2pic2.PNG',
+        //     'event_pic3' => 'e2pic3.PNG',
+        // ]);
+
+        // DB::table('event')->insert([
+        //     'event_id' => 3,
+        //     'event_title' => 'e3title',
+        //     'event_category'=> 'Human Dev',
+        //     'event_venue' => 'e3venue',
+        //     'posted_on' => Carbon::parse('2022-04-04'),
+        //     'open_for' => 'Committee',
+        //     'closed_on' => Carbon::parse('2022-05-05'),
+        //     'event_details' => 'e3details',
+        //     'event_url' => 'https://form.typeform.com/to/KFeb422q?typeform-medium=embed-snippet',
+        //     'event_date' => Carbon::parse('2022-06-06'),
+        //     'event_pic1' => 'e3pic1.PNG',
+        //     'event_pic2' => 'e3pic2.PNG',
+        //     'event_pic3' => 'e3pic3.PNG',
+        // ]);
     }
 }

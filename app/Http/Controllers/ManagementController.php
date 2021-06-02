@@ -11,8 +11,7 @@ class ManagementController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
-        return view('main_dashboard', compact('user'));
+        return view('main_dashboard');
     }
     public function profilePage(Request $r){
         $management = Management::where('management_matrix_card', Auth::user()->matrix_card)->get();

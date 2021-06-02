@@ -61,8 +61,8 @@
                 <div class="modal-body">Please choose your preference:</div>
                 <div class="modal-footer">
                     <button class="btn btn-info" type="button" data-dismiss="modal"
-                        onclick="window.location.href='{{url('addPost')}}'">News</button>
-                    <a class="btn btn-primary" href="{{url('addNews')}}">Event</a>
+                        onclick="window.location.href='{{url('addNews')}}'">News</button>
+                    <a class="btn btn-primary" href="{{url('addPost')}}">Event</a>
                 </div>
             </div>
         </div>

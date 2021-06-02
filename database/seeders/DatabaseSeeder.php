@@ -127,5 +127,17 @@ class DatabaseSeeder extends Seeder
         //     'event_pic2' => 'e3pic2.PNG',
         //     'event_pic3' => 'e3pic3.PNG',
         // ]);
+
+        // DB::table('member')->insert([
+        //     'matrix_card' => 'm4matric',
+        //     'name' => 'm4name',
+        //     'email' => 'm4email@gmail.com',
+        //     'password' => bcrypt('m4password'),
+        //     'batch' => 2020,
+        //     'program_code' => 'm4program_code',
+        //     'degree' => 'm4degree',
+        //     'address' => 'm4address',
+        //     'access_grant' => 1,
+        // ]);
     }
 }

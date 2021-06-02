@@ -9,13 +9,13 @@ use Carbon\Carbon;
 
 class EventController extends Controller
 {
-    public function allEvent(Request $r){
+    public function allEventMember(Request $r){
         $events = Event::all();
 
         return view('client.events', compact('events'));
     }
 
-    public function anEvent(Request $r){
+    public function anEventMember(Request $r){
         $events = Event::where('event_id', $r->id)->get();
         $event = $events[0];
 

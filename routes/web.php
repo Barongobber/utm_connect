@@ -28,9 +28,6 @@ Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_user');
 
-Route::get('/cobaAdmin', function () {
-    return view('admin.index');
-});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -48,8 +45,8 @@ Route::middleware(['auth'])->group(function () {
         return view('client.view-news');
     });
 
-    Route::get('/user-events', [EventController::class, 'allEvent'])->name('user-events');
-    Route::get('/user-view-event/{id}', [EventController::class, 'anEvent'])->name('user-view-event');
+    Route::get('/user-events', [EventController::class, 'allEventMember'])->name('user-events');
+    Route::get('/user-view-event/{id}', [EventController::class, 'anEventMember'])->name('user-view-event');
 
     Route::get('/user-academic', function(){
         return view('client.academic');
@@ -79,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
     //This exclusive for ADMIN
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index'])->name('home');
+        Route::post('/changeGrant/{id}', [AdminController::class, 'changeGrant'])->name('changeGrant');
     });
 
     //This exclusive for MANAGEMENT

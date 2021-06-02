@@ -62,11 +62,11 @@
               <div class="card-body event-card-body">
                 <h4 class="event-title">{{ $event->event_title }}</h4>
                 <div class="event-card-details">
-                      <span class="post-details"> Category: <p class="event-category">{{ $event->event_category }}</p></span>
+                      <span class="post-details"> Category:<p class="event-category">{{ $event->event_category }}</p></span>
                 </div>
                 <div class="row event-description justify-content-center">
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
-                    <span style="font-weight:bold;">Date: </span>
+                    <span style="font-weight:bold;">Date:</span>
                     <span style="display:block;">{{ $event->event_date }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
@@ -74,12 +74,12 @@
                     <span style="display:block;">{{ $event->event_venue }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
-                    <span style="font-weight:bold;">Time: </span>
-                    <span style="display:block;">The time</span>
+                    <span style="font-weight:bold;">Posted on:</span>
+                    <span style="display:block;">{{ $event->posted_on }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
-                    <span style="font-weight:bold;">Link:</span>
-                    <span style="display:block;">{{ $event->event_url }}</span>
+                    <span style="font-weight:bold;">Registration Closed:</span>
+                    <span style="display:block;">{{ $event->closed_on }}</span>
                   </div>
                 </div>
               </div>

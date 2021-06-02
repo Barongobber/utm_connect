@@ -28,11 +28,11 @@
               <div class="card-body event-card-body">
                 <h4 class="event-title">{{ $eventDesc['event']->event_title }}</h4>
                 <div class="event-card-details">
-                      <span class="post-details"> Category: <p class="event-category">{{ $eventDesc['event']->event_category }}</p></span>
+                      <span class="post-details"> Category:<p class="event-category">{{ $eventDesc['event']->event_category }}</p></span>
                 </div>
                 <div class="row event-description justify-content-center">
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
-                    <span style="font-weight:bold;">Date: </span>
+                    <span style="font-weight:bold;">Date:</span>
                     <span style="display:block;">{{ $eventDesc['event']->event_date }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 event-subheading">
@@ -40,7 +40,7 @@
                     <span style="display:block;">{{ $eventDesc['event']->event_venue }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">
-                    <span style="font-weight:bold;">Posted on: </span>
+                    <span style="font-weight:bold;">Posted on:</span>
                     <span style="display:block;">{{ $eventDesc['event']->posted_on }}</span>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-md-6 mb-2 event-subheading">

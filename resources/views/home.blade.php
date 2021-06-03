@@ -17,7 +17,6 @@
                     {{ __('You are logged in!') }} <br>
                     @if (session('user_email'))
                         {{ session('user_email') }} <br>
-                        {{ session('user_access') }} <br>
                     @endif
                 </div>
             </div>

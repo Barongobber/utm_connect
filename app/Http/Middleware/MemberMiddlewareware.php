@@ -16,9 +16,9 @@ class MemberMiddlewareware
      */
     public function handle(Request $request, Closure $next)
     {
-        $uga = $request->session()->get('user_access');
-        if($uga != 'member'){
-            if($uga == 'management' || $uga == 'admin'){
+        $uga = auth()->user()->access_grant;
+        if($uga != 1){
+            if($uga == 2 || $uga == 3){
                 return redirect('home');
             }
             return redirect('logout');

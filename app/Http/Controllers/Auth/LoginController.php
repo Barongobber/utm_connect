@@ -75,7 +75,6 @@ class LoginController extends Controller
             $uemail = auth()->user()->email;
             $umcard = auth()->user()->matrix_card;
 
-            $request->session()->put('user_access', $ugd);
             $request->session()->put('user_email', $uemail);
             $request->session()->put('user_matric', $umcard);
 

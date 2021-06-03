@@ -13,33 +13,39 @@
                     <i class='fas fa-stream'></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Go to Member Side</a>
-                    <a class="dropdown-item" href="#">Go to Management Side</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="{{ url('user-home') }}">Go to Member Side</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                 </div>
             </div>
         </div>
         <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-              <tr align="center">
-                <th>Name</th>
-                <th>Matrix No</th>
-                <th>Program Code</th>
-                <th>Role</th>
-                <th>Action Button</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($members as $member)
-              <form method="POST" action="{{ route('changeGrant', ['id' => $member->matrix_card]) }}" enctype="multipart/form-data">
-              @csrf
+          <form method="POST" action="{{ route('changeGrant') }}" enctype="multipart/form-data">
+          @csrf
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr align="center">
+                  <th>Name</th>
+                  <th>Matrix No</th>
+                  <th>Program Code</th>
+                  <th>Role</th>
+                  <th>Action Button</th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach ($members as $key => $member)
                 <tr>
                   <td>{{ $member->name }}</td>
                   <td align="center">{{ $member->matrix_card }}</td>
                   <td align="center">{{ $member->program_code }}</td>
                   <td align="center">
-                    <select name="role" id="role" style="color: white">
+                    @if (Auth::user()->matrix_card == $member->matrix_card)
+                      <input type="hidden" name="role[]" value="{{ $member->access_grant }}">
+                    @endif
+                    <select name="role[]" style="color: white"
+                    @if (Auth::user()->matrix_card == $member->matrix_card)
+                      disabled
+                    @endif
+                    >
                       @if ($member->access_grant == 1)
                         <option value='1' selected="selected">Member</option>
                       @else
@@ -57,14 +63,19 @@
                       @endif
                     </select>
                   </td>
+                  <input type="hidden" name="id" value="{{ $member->matrix_card }}">
                   <td align="center">
-                    <button class="btn-light" type="submit">Apply Changes</button>
+                    <button class="btn-light" name="submit" value="{{ $key }}" type="submit"
+                    @if (Auth::user()->matrix_card == $member->matrix_card)
+                      disabled
+                    @endif
+                    >Apply Changes</button>
                   </td>
                 </tr>
-              </form>
               @endforeach
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </form>
         </div>
       </div>
     </div>

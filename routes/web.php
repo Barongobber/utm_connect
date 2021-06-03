@@ -76,7 +76,7 @@ Route::middleware(['auth'])->group(function () {
     //This exclusive for ADMIN
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index'])->name('home');
-        Route::post('/changeGrant/{id}', [AdminController::class, 'changeGrant'])->name('changeGrant');
+        Route::post('/changeGrant', [AdminController::class, 'changeGrant'])->name('changeGrant');
     });
 
     //This exclusive for MANAGEMENT

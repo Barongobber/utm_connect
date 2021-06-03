@@ -16,6 +16,14 @@ class AdminController extends Controller
     }
 
     public function changeGrant(Request $r){
-        dd($r);
+        $index = $r->submit;
+        $matrix_card = $r->id;
+        $newRole = $r->role[$index];
+
+        $user = Member::where('matrix_card', $matrix_card)
+        ->update([
+            'access_grant' => $newRole,
+        ]);
+        return redirect('home');
     }
 }

@@ -16,10 +16,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $uga = $request->session()->get('user_access');
-
-        if($uga != 'admin'){
-            if($uga == 'management' || $uga == 'member'){
+        // $uga = $request->session()->get('user_access');
+        $uga = auth()->user()->access_grant;
+        if($uga != 3){
+            if($uga == 2 || $uga == 1){
                 return redirect('home');
             }
             return redirect('logout');

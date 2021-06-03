@@ -64,8 +64,11 @@
                     <img class="border rounded-circle img-profile avatar" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
                       <a class="dropdown-item" href="{{url('user-profile')}}"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
-                      @if (session('user_access') == "management")
-                        <a class="dropdown-item" href="{{ route('home') }}"><i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Swicth to Management</a>
+                      @if (auth()->user()->access_grant == 2)
+                        <a class="dropdown-item" href="{{ route('home') }}"><i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Switch to Management</a>
+                      @endif
+                      @if (auth()->user()->access_grant == 3)
+                        <a class="dropdown-item" href="{{ route('home') }}"><i class="fas fa-id-card-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Switch to Admin</a>
                       @endif
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>

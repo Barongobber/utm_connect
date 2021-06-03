@@ -25,13 +25,14 @@ class HomeController extends Controller
      */
     public function index(Request $r)
     {
-        $role = $r->session()->get('user_access');
+        // $role = $r->session()->get('user_access');
+        $role = auth()->user()->access_grant;
 
-        if($role == "admin"){
+        if($role == 3){
             return redirect('admin');
-        } else if($role == "management"){
+        } else if($role == 2){
             return redirect('management');
-        } else if($role == "member"){
+        } else if($role == 1){
             return redirect('member');
         }
 

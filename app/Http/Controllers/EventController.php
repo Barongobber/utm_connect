@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class EventController extends Controller
 {
     public function allEventMember(Request $r){
-        $events = Event::all();
+        $events = Event::all()->sortBy('posted_on')->reverse();
 
         return view('client.events', compact('events'));
     }

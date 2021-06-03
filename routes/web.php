@@ -7,6 +7,7 @@ use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PostController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -108,9 +109,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/contentList', function () {
             return view('layouts.post.content_list');
         });
-        Route::get('/table', function () {
-            return view('layouts.post.table');
-        });
+        Route::get('/table', [PostController::class, 'allPost'])->name('table');
 
 
         //blasting

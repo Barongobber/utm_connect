@@ -8,6 +8,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PostController;
+use App\Models\Event;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -109,6 +110,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/addPost', function () {
             return view('layouts.post.add_post');
         });
+        Route::post('/addEvent', [EventController::class, 'addEvent'])->name('addEvent');
+
         Route::get('/contentList', function () {
             return view('layouts.post.content_list');
         });

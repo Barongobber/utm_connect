@@ -85,6 +85,7 @@
                       alt="news"
                     />
                   </div>
+                  @if ($eventDesc['event']->event_pic2 != null)
                   <div class="carousel-item">
                     <img
                       class="event-slide-img"
@@ -92,6 +93,8 @@
                       alt="news"
                     />
                   </div>
+                  @endif
+                  @if ($eventDesc['event']->event_pic3 != null)
                   <div class="carousel-item">
                     <img
                       class="event-slide-img"
@@ -99,6 +102,7 @@
                       alt="news"
                     />
                   </div>
+                  @endif
                 </div>
                 <ol class="carousel-indicators list-inline">
                   <li class="list-inline-item active">
@@ -110,6 +114,7 @@
                       ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic1) }}" alt=""
                     /></a>
                   </li>
+                  @if ($eventDesc['event']->event_pic2 != null)
                   <li class="list-inline-item">
                     <a
                       id="carousel-selector-1"
@@ -118,14 +123,22 @@
                       ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic2) }}" alt=""
                     /></a>
                   </li>
+                  @endif
+                  @if ($eventDesc['event']->event_pic3 != null)
                   <li class="list-inline-item">
                     <a
+                      @if ($eventDesc['event']->event_pic2 != null)
                       id="carousel-selector-2"
                       data-slide-to="2"
+                      @else
+                      id="carousel-selector-1"
+                      data-slide-to="1"
+                      @endif
                       data-target="#imgCarousel"
                       ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic3) }}" alt=""
                     /></a>
                   </li>
+                  @endif
                 </ol>
               </div>
               <div class="spacer mt-1"> </div>

@@ -108,7 +108,7 @@ class DatabaseSeeder extends Seeder
         //     'event_url' => 'https://form.typeform.com/to/sWBiD0dR?typeform-medium=embed-snippet',
         //     'event_date' => Carbon::parse('2021-12-12'),
         //     'event_pic1' => 'e2pic1.PNG',
-        //     'event_pic2' => 'e2pic2.PNG',
+        //     'event_pic2' => NULL,
         //     'event_pic3' => 'e2pic3.PNG',
         // ]);
 
@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
         //     'event_date' => Carbon::parse('2022-06-06'),
         //     'event_pic1' => 'e3pic1.PNG',
         //     'event_pic2' => 'e3pic2.PNG',
-        //     'event_pic3' => 'e3pic3.PNG',
+        //     'event_pic3' => NULL,
         // ]);
 
         // DB::table('member')->insert([

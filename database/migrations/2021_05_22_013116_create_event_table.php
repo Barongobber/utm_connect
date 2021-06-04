@@ -25,8 +25,8 @@ class CreateEventTable extends Migration
             $table->string('event_url');
             $table->date('event_date');
             $table->string('event_pic1');
-            $table->string('event_pic2');
-            $table->string('event_pic3');
+            $table->string('event_pic2')->nullable();
+            $table->string('event_pic3')->nullable();
 
             $table->timestamps();
 

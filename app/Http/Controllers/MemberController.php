@@ -27,7 +27,8 @@ class MemberController extends Controller
 
     public function updateProfile(Request $r){
         $this->validate($r, [
-            'email' => 'email'
+            'email' => 'required|email',
+            'address' => 'required'
         ]);
 
         $route = $r->get('route');

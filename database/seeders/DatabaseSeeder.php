@@ -139,5 +139,26 @@ class DatabaseSeeder extends Seeder
         //     'address' => 'm4address',
         //     'access_grant' => 1,
         // ]);
+
+        // DB::table('feedback')->insert([
+        //     [
+        //         'matrix_card_feedback' => 'm1matric',
+        //         'comment_on' => Carbon::parse('2021-05-06'),
+        //         'event_id' => 1,
+        //         'feedback' => 'feedback1',
+        //         'rate_event' => 5,
+        //     ],[
+        //         'matrix_card_feedback' => 'm3matric',
+        //         'comment_on' => Carbon::parse('2021-05-08'),
+        //         'event_id' => 1,
+        //         'feedback' => 'feedback2',
+        //         'rate_event' => 4,
+        //     ],[
+        //         'matrix_card_feedback' => 'm4matric',
+        //         'comment_on' => Carbon::parse('2021-05-07'),
+        //         'event_id' => 1,
+        //         'feedback' => 'feedback3',
+        //         'rate_event' => 3,
+        // ]]);
     }
 }

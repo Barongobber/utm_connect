@@ -11,6 +11,8 @@ class Feedback extends Model
     use HasFactory;
     public $table = 'feedback';
     protected $primaryKey = 'matrix_card_feedback';
+    public $incrementing = false;
+    protected $keyType = 'string';
 
     protected $fillable = [
         'matrix_card_feedback',
@@ -20,7 +22,9 @@ class Feedback extends Model
         'rate_event',
     ];
 
-
+    public function member(){
+        return $this->belongsTo(Member::class);
+    }
     public function event(){
         return $this->belongsTo(Event::class);
     }

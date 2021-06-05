@@ -145,87 +145,34 @@
               <h4 class="mb-0">Feedback</h4>
               <hr class="mt-1 dotted-ruler width-1">
               <div class="px-5 mb-3">
+              @if ($eventDesc['check'] == 0)
                 <button class="btn btn-red btn-md mt-2" data-toggle="modal" data-target="#feedbackModal">Submit your feedback</button>
+              @endif
               </div>
               <div class="feedback-list" id="comments-logout">
+                @foreach ($eventDesc['feedback'] as $index => $feedback)
                 <div class="card">
                   <div class="card-body">
                     <div class="row">
                       <div class="col-3 feedback-profile">
-                        <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
+                        <span class="d-block text-gray-600 small mx-auto mb-2" >{{ $eventDesc['users'][$index]->name }}</span>
                         <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
                       </div>
                       <div class="col-9">
                         <div class="d-block">
+                        @for ($i = 0; $i < $feedback->rate_event; $i++)
                           <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <p class="feedback-content mx-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                          <span class="d-block text-gray-600 small text-right mr-3 mt-2">Posted on: 31 - 02 - 2069</span>
+                        @endfor
+                          <p class="feedback-content mx-1">
+                            {{ $feedback->feedback }}
+                          </p>
+                          <span class="d-block text-gray-600 small text-right mr-3 mt-2">Posted on: {{ $feedback->comment_on }}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-3 feedback-profile">
-                        <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
-                        <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
-                      </div>
-                      <div class="col-9">
-                        <div class="d-block">
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <p class="feedback-content mx-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                          <span class="d-block text-gray-600 small text-right mr-3 mt-2">Posted on: 31 - 02 - 2069</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-3 feedback-profile">
-                        <span class="d-block text-gray-600 small mx-auto mb-2" >Udin Saleh</span>
-                        <img class="border rounded-circle img-profile avatar mx-auto" src="{{asset('projectad/assets/img/profile.jpg')}}"></a>
-                      </div>
-                      <div class="col-9">
-                        <div class="d-block">
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <span class="d-inline star">★</span>
-                          <p class="feedback-content mx-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                          <span class="d-block text-gray-600 small text-right mr-3 mt-2">Posted on: 31 - 02 - 2069</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                @endforeach
               </div>
             </div>
           </div>
@@ -248,9 +195,10 @@
             <h4>Give your feedback</h4>
           </div>
           <div class="d-flex flex-column text-center">
-            <form action="">
+            <form action="{{ route('addFeedback') }}" method="POST" enctype="multipart/form-data">
+            @csrf
               <div class="rate">
-                <input type="radio" name="rate" value="5" id="star5">
+                <input type="radio" name="rate" value="5" id="star5" required>
                 <label for="star5" title="text"></label>
                 <input type="radio" name="rate" value="4" id="star4">
                 <label for="star4" title="text"></label>
@@ -262,8 +210,9 @@
                 <label for="star1" title="text"></label>
               </div>
               <div class="form-group">
-                <textarea name="feedback" cols="30" rows="10" placeholder="Enter your feedback here"></textarea>
+                <textarea name="feedback" cols="30" rows="10" placeholder="Enter your feedback here" required></textarea>
               </div>
+              <input type="hidden" name="event_id" value="{{$eventDesc['event']->event_id}}">
               <input type="submit" class="btn btn-std btn-block btn-round" value="Submit">
             </form>
           </div>

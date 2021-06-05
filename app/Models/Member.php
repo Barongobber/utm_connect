@@ -62,4 +62,7 @@ class Member extends Authenticatable
     public function program(){
         return $this->hasOne(Program::class);
     }
+    public function feedback(){
+        return $this->hasMany(Feedback::class);
+    }
 }

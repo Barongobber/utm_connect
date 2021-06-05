@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\Feedback;
+use App\Models\Member;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Exception;
@@ -15,6 +17,20 @@ class EventController extends Controller
 
         return view('client.events', compact('events'));
     }
+    public function allEventManagement(Request $r){
+        $events = Event::all()->sortBy('posted_on')->reverse();
+        $finishedEvents = array();
+        $today = new Carbon;
+
+        for($i = 0; $i < count($events); $i++){
+            if($events[$i]->event_date <= $today){
+                $finishedEvents[$i] = $events[$i];
+            }
+        }
+
+        return view('layouts.feedback.feedback', compact('finishedEvents'));
+    }
+
 
     public function anEventMember(Request $r){
         $events = Event::where('event_id', $r->id)->get();
@@ -27,13 +43,34 @@ class EventController extends Controller
         //Check if user can give feedback (After the event ended)
         $done = ($event->event_date <= $today);
 
+        //Feedback
+        $feedback = Feedback::where('event_id', $event->event_id)
+                                ->orderBy('comment_on', 'desc')
+                                ->get();
+
+        //Assign user to the respective feedback
+        $users = array();
+        for($i = 0; $i < count($feedback); $i++){
+            $users[$i] = Member::where('matrix_card', $feedback[$i]->matrix_card_feedback)->get()[0];
+        }
+
+        //Check if user already give feedback
+        $check = Feedback::where([
+            'matrix_card_feedback' => auth()->user()->matrix_card,
+            'event_id' => $event->event_id,
+        ])->get();
+
         $eventDesc = [
             'event' => $event,
             'open' => $open,
             'done' => $done,
+            'feedback' => $feedback,
+            'users' => $users,
+            'check' => count($check),
         ];
         return view('client.view-event', compact('eventDesc'));
     }
+
 
     public function addEvent(Request $r){
         $today = new Carbon;

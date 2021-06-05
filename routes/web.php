@@ -7,8 +7,10 @@ use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PostController;
 use App\Models\Event;
+use App\Models\Feedback;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +54,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/user-events', [EventController::class, 'allEventMember'])->name('user-events');
     Route::get('/user-view-event/{id}', [EventController::class, 'anEventMember'])->name('user-view-event');
+    Route::post('/addFeedback', [FeedbackController::class, 'addFeedback'])->name('addFeedback');
 
     Route::get('/user-academic', function(){
         return view('client.academic');
@@ -134,12 +137,8 @@ Route::middleware(['auth'])->group(function () {
 
 
         //feedback
-        Route::get('/feedbackDetails', function () {
-            return view('layouts.feedback.feedback_details');
-        });
-        Route::get('/feedback', function () {
-            return view('layouts.feedback.feedback');
-        });
+        Route::get('/feedbackDetails/{id}', [FeedbackController::class, 'anEventFeedback'])->name('feedbackDetails');
+        Route::get('/feedback', [EventController::class, 'allEventManagement'])->name('feedback');
     });
 
     //This exclusive for MEMBER

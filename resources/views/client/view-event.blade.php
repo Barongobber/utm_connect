@@ -76,7 +76,7 @@
             <div class="card mb-3 list-card view-event-card">
               <h4 class="text-align-left mt-3">Documentation</h4>
               <hr class="mt-1 dotted-ruler width-1">
-              <div id="imgCarousel" class="carousel slide event-slide" data-ride="carousel">
+              <div id="imgCarousel" class="carousel slide event-slide mb-5" data-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img
@@ -111,7 +111,7 @@
                       class="selected"
                       data-slide-to="0"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic1) }}" alt=""
+                      ><img class="img-fluid event-thumb" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic1) }}" alt=""
                     /></a>
                   </li>
                   @if ($eventDesc['event']->event_pic2 != null)
@@ -120,7 +120,7 @@
                       id="carousel-selector-1"
                       data-slide-to="1"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic2) }}" alt=""
+                      ><img class="img-fluid event-thumb" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic2) }}" alt=""
                     /></a>
                   </li>
                   @endif
@@ -135,7 +135,7 @@
                       data-slide-to="1"
                       @endif
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic3) }}" alt=""
+                      ><img class="img-fluid event-thumb" src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic3) }}" alt=""
                     /></a>
                   </li>
                   @endif

@@ -539,6 +539,11 @@ a:hover{
   height: auto;
 }
 
+.event-thumb{
+  max-height:100px;
+  width:auto;
+}
+
 /* Library */
 #library{
   background-image: repeating-linear-gradient(to right, crimson, #e6202b, #e6202b, crimson);

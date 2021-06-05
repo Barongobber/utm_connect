@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a87f6a6754d585e6664d3f767d3da82b577673a5',
+    'reference' => '08543bed8ab508314787cdbbe818f72dc959a09d',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -505,7 +505,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a87f6a6754d585e6664d3f767d3da82b577673a5',
+      'reference' => '08543bed8ab508314787cdbbe818f72dc959a09d',
     ),
     'laravel/sail' => 
     array (
@@ -724,6 +724,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.4.1',
+      'version' => '6.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9256f12d8fb0cd0500f93b19e18c356906cbed3d',
     ),
     'phpoption/phpoption' => 
     array (

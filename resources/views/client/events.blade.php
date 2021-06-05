@@ -21,7 +21,7 @@
           <form class="filter-form">
 
               <div class="input-group">
-                <input type="search" class="form-control" placeholder="Search for events" name="" id="">
+                <input type="search" class="form-control" placeholder="Search for events" name="" id="searchBar">
               </div>
               <div class="input-group">
                 <label class="filter-label" for="eventcategories">Filter category: </label>
@@ -97,4 +97,19 @@
 
 
 
+@endsection
+@section('script')
+<script>
+$('#searchBar').keyup(function(e){
+  $('.event-title').each(function(e){
+    if($(this).text().toLowerCase().indexOf($('#searchBar').val().toLowerCase())!=-1){
+      $(this).parent().parent().parent().parent().parent().css('display', 'block');
+    }
+    else{
+      $(this).parent().parent().parent().parent().parent().css('display', 'none');
+    }
+  });
+}
+);
+</script>
 @endsection

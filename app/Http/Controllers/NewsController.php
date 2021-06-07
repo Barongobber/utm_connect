@@ -6,61 +6,60 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\News;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
-    public function index()
+    public function index(Request $r)
     {
-        // Get all Posts, ordered by the newest first
-        $news = News::latest()->get();
+        $allnews = News::where('news_id', $r->id)->get();
+        $news = $allnews[0];
+
+        $today = new Carbon;
+
+        $posted_on = ($news->posted_on > $today);
+        $newsdesc = [
+            'news' => $news,
+            'posted_on' => $posted_on,
+        ];
 
         // Pass Post Collection to view
-        return view('posts.index', compact('news'));
+        return view('client.view-news', compact('newsdesc'));
     }
 
-
-    public function create()
+    public function addNews(Request $r)
     {
-        return view('layouts.post.add_news');
-    }
+        $today = Carbon::now();
 
-    public function show(News $news)
-    {
-        // Pass current post to view
-        return view('client.news', compact('news'));
-    }
+        $pic1 = $r->file('news_pic1');
+        $pic2 = $r->file('news_pic2');
+        $pic3 = $r->file('news_pic3');
 
+        $pic1name = $pic1->getClientOriginalName();
+        if ($pic2 != null) $pic2name = $pic2->getClientOriginalName();
+        else $pic2name = null;
+        if ($r->news_pic3 != null) $pic3name = $pic3->getClientOriginalName();
+        else $pic3name = null;
 
-    public function edit(News $news)
-    {
-        return view('posts.edit', compact('news'));
-    }
-
-
-    public function store(Request $request)
-    {
-        // Validate posted form data
-        $validated = $request->validate([
-            'news_title' => 'required|string|unique:posts|min:5|max:100',
-            'news_content' => 'required|string|min:5|max:2000',
-            'news_category' => 'required|string|max:30',
-            'posted_on' => 'required|string|max:30',
-            'news_pic1' => 'required|string|unique:posts|max:255',
-            'news_pic2' => 'required|string|unique:posts|max:255',
-            'news_pic3' => 'required|string|unique:posts|max:255',
+        $news = new News([
+            'news_category'  => $r->news_category,
+            'news_title' => $r->news_title,
+            'news_content' => $r->news_content,
+            'posted_on' => $today,
+            'news_pic1' => $r->$pic1name,
+            'news_pic2' => $r->$pic1name,
+            'news_pic3' => $r->$pic1name,
         ]);
+        $news->save();
 
-        // Create slug from title
-        $validated['slug'] = Str::slug($validated['news_title'], '-');
+        $newPath = public_path() . '/images/news/' . $news->news_id;
 
-        // Create and save post with validated data
-        $news = News::create($validated);
+        $pic1->move($newPath, $pic1name);
+        if ($r->news_pic2 != null) $pic2->move($newPath, $pic2name);
+        if ($r->news_pic3 != null) $pic3->move($newPath, $pic3name);
 
-        // Redirect the user to the created post with a success notification
-        return redirect(route('client.news', [$news->slug]))->with('notification', 'Post created!');
+        return redirect('table');
     }
-
-
 
     public function destroy(News $news)
     {

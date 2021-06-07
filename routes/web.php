@@ -8,6 +8,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PostController;
 use App\Models\Event;
 use App\Models\Feedback;
@@ -110,6 +111,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/addNews', function () {
             return view('layouts.post.add_news');
         });
+
+        Route::post('/addNews', [NewsController::class, 'addNews'])->name('addNews');
         Route::get('/addPost', function () {
             return view('layouts.post.add_post');
         });

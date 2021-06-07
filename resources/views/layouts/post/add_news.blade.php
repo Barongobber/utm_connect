@@ -1,18 +1,17 @@
-@section('title', 'New news')
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ 'post.store' }}" method="post">
+    <div class="d-sm-flex justify-content-between align-items-center">
+        <h3 class="text-dark mb-4">Add News</h3>
+    </div>
+    <div class="mb-3">
+        <a class="btn btn-shadow btn-danger" href="{{ route('table') }}">
+            <i class="fas fa-angle-left"></i>
+            <span>Back</span>
+        </a>
+    </div>
+    <form action="{{ route('addNews') }}" method="POST">
         @csrf
-        <div class="d-sm-flex justify-content-between align-items-center">
-            <h3 class="text-dark mb-4">Add News</h3>
-        </div>
-        <div class="mb-3">
-            <button class="btn btn-shadow btn-danger" onclick="window.location.href='?cms=content_management'">
-                <i class="fas fa-angle-left"></i>
-                <span>Back</span>
-            </button>
-        </div>
         <div class="card shadow">
             <div class="tabbable">
                 <div class="tab-content">
@@ -25,15 +24,16 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Title<span style="color: red;">*</span></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" value="{{ old('title') }}"
-                                            placeholder="Write your title of news here" required>
+                                        <input name="news_title" type="text" class="form-control"
+                                            value="{{ old('title') }}" placeholder="Write your title of news here"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Category<span
                                             style="color: red;">*</span></label>
                                     <div class="col-sm-9">
-                                        <select class="form-control">
+                                        <select name="news_category" class="form-control">
                                             <option value="" disabled selected>Choose Category</option>
                                             <option value="Sports" {{ old('category') === 'Sports' ? 'selected' : null }}>
                                                 Sports</option>
@@ -46,7 +46,8 @@
                                                 {{ old('category') === 'Strategic Studies' ? 'selected' : null }}>
                                                 Strategic Studies</option>
                                             <option value="Human Dev" {{ old('category') === 'html' ? 'selected' : null }}
-                                                {{ old('category') === 'Human Dev' ? 'selected' : null }}>Human Development
+                                                {{ old('category') === 'Human Dev' ? 'selected' : null }}>Human
+                                                Development
                                             </option>
                                         </select>
                                     </div>
@@ -55,7 +56,7 @@
                                     <label class="col-sm-3 col-form-label">News Details<span
                                             style="color: red;">*</span></label>
                                     <div class="col-sm-9">
-                                        <textarea rows="8" type="text" class="form-control"
+                                        <textarea name="news_content" rows="8" type="text" class="form-control"
                                             placeholder="Write details of the news here"></textarea>
                                     </div>
                                 </div>
@@ -63,19 +64,22 @@
                                     <label class="col-sm-3 col-form-label">Picture 1<span
                                             style="color: red;">*</span></label>
                                     <div class="col-sm-9">
-                                        <input type="submit" class="btn btn-primary" value="Upload Picture" name="" id="">
+                                        <input type="file" class="btn btn-primary" value="Upload Picture" name="news_pic1"
+                                            id="" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="contact-province" class="col-sm-3 col-form-label">Picture 2</label>
                                     <div class="col-sm-9">
-                                        <input type="submit" class="btn btn-primary" value="Upload Picture" name="" id="">
+                                        <input type="file" class="btn btn-primary" value="Upload Picture" name="news_pic2"
+                                            id="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="contact-city" class="col-sm-3 col-form-label">Picture 3</label>
                                     <div class="col-sm-9">
-                                        <input type="submit" class="btn btn-primary" value="Upload Picture" name="" id="">
+                                        <input type="file" class="btn btn-primary" value="Upload Picture" name="news_pic3"
+                                            id="">
                                     </div>
                                 </div>
                             </div>

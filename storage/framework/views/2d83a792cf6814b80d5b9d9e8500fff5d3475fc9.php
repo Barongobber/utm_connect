@@ -154,7 +154,7 @@
     }
 })
 </script>
-
+<?php echo $__env->yieldContent('script'); ?>
 </body>
 
 </html>

@@ -63,7 +63,7 @@
                       @endif
                     </select>
                   </td>
-                  <input type="hidden" name="id" value="{{ $member->matrix_card }}">
+                  <input type="hidden" name="id[]" value="{{ $member->matrix_card }}">
                   <td align="center">
                     <button class="btn-light" name="submit" value="{{ $key }}" type="submit"
                     @if (Auth::user()->matrix_card == $member->matrix_card)

@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <div class="d-sm-flex justify-content-between align-items-center">
     <h3 class="text-dark mb-4">Choose Recipients</h3>
     <div class="float-right">
@@ -222,3 +224,4 @@
         </div>
     </div>
 </div>
+@endsection

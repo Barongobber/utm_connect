@@ -32,7 +32,7 @@
                 <div class="col-sm-9">
                   <select name="e_category" class="form-control" required>
                     <option value="" selected>Choose Category</option>
-                    <option value="Sports">Sports</option>
+                    <option value="Sport">Sports</option>
                     <option value="Academic">Academic</option>
                     <option value="Arts or Music">Arts or Music</option>
                     <option value="Strategic Studies">Strategic Studies</option>

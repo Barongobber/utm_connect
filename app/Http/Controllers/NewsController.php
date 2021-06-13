@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 class NewsController extends Controller
 {
-    public function index(Request $r)
+    public function allNews(Request $r)
     {
         $allnews = News::where('news_id', $r->id)->get();
         $news = $allnews[0];
@@ -42,13 +42,13 @@ class NewsController extends Controller
         else $pic3name = null;
 
         $news = new News([
-            'news_category'  => $r->news_category,
             'news_title' => $r->news_title,
+            'news_category'  => $r->news_category,
             'news_content' => $r->news_content,
             'posted_on' => $today,
-            'news_pic1' => $r->$pic1name,
-            'news_pic2' => $r->$pic1name,
-            'news_pic3' => $r->$pic1name,
+            'news_pic1' => $pic1name,
+            'news_pic2' => $pic1name,
+            'news_pic3' => $pic1name,
         ]);
         $news->save();
 

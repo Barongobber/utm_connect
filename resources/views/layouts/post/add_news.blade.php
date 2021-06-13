@@ -10,7 +10,7 @@
             <span>Back</span>
         </a>
     </div>
-    <form action="{{ route('addNews') }}" method="POST">
+    <form action="{{ route('addNews') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card shadow">
             <div class="tabbable">
@@ -33,22 +33,13 @@
                                     <label class="col-sm-3 col-form-label">Category<span
                                             style="color: red;">*</span></label>
                                     <div class="col-sm-9">
-                                        <select name="news_category" class="form-control">
-                                            <option value="" disabled selected>Choose Category</option>
-                                            <option value="Sports" {{ old('category') === 'Sports' ? 'selected' : null }}>
-                                                Sports</option>
-                                            <option value="Academic"
-                                                {{ old('category') === 'Academic' ? 'selected' : null }}>Academic</option>
-                                            <option value="Arts or Music"
-                                                {{ old('category') === 'Arts or Music' ? 'selected' : null }}>Arts or
-                                                Music</option>
-                                            <option value="Strategic Studies"
-                                                {{ old('category') === 'Strategic Studies' ? 'selected' : null }}>
-                                                Strategic Studies</option>
-                                            <option value="Human Dev" {{ old('category') === 'html' ? 'selected' : null }}
-                                                {{ old('category') === 'Human Dev' ? 'selected' : null }}>Human
-                                                Development
-                                            </option>
+                                        <select name="news_category" class="form-control" required>
+                                            <option value="" selected>Choose Category</option>
+                                            <option value="Sports">Sports</option>
+                                            <option value="Academic">Academic</option>
+                                            <option value="Arts or Music">Arts or Music</option>
+                                            <option value="Strategic Studies">Strategic Studies</option>
+                                            <option value="Human Dev">Human Development</option>
                                         </select>
                                     </div>
                                 </div>
@@ -87,8 +78,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="text-right">
-                            <button type="button" class="btn btn-danger btn-shadow"
-                                onclick="window.location.href='?cms=content_management'">Cancel</button>
+                            <a class="btn btn-danger btn-shadow" href="{{ route('table') }}">Cancel</a>
                             <button type="submit" class="btn btn-success btn-shadow">Submit</button>
                         </div>
                     </div>

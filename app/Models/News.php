@@ -18,11 +18,6 @@ class News extends Model
         'posted_on',
         'news_pic1',
         'news_pic2',
-        'news_pic3',
-        'slug'
+        'news_pic3'
     ];
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 }

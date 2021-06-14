@@ -27,9 +27,11 @@
             </td>
             @endif
             <td align="center">
-              <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-info"></i></button>
-              <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-dark" ><i class="fa fa-pencil-square-o"></i></button>
-              <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-danger" ><i class="fa fa-trash-o"></i></button>
+              <a href="{{ route('infoEvent', $post['event_id']) }}" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-info"></i></a>
+              <a href="{{ route('editEvent', $post['event_id']) }}" style="padding: 1px 12px;" class="btnAction btn btn-dark" ><i class="fa fa-pencil-square-o"></i></a>
+              <form action="{{ route('deleteEvent') }}" method="POST" enctype="multipart/form-data">@csrf
+                <button type="submit" style="padding: 1px 12px;" class="btnAction btn btn-danger" name="id" value="{{ $post['event_id'] }}" ><i class="fa fa-trash-o"></i></button>
+              </form>
             </td>
           </tr>
         @endisset

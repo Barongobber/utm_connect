@@ -110,10 +110,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/addNews', function () {
             return view('layouts.post.add_news');
         });
-        Route::get('/addPost', function () {
-            return view('layouts.post.add_post');
-        });
+        Route::get('/addPost', [PostController::class, 'addPost'])->name('addPost');
+        Route::get('/infoEvent/{id}', [EventController::class, 'infoEvent'])->name('infoEvent');
+        Route::get('/editEvent/{id}', [EventController::class, 'editEvent'])->name('editEvent');
         Route::post('/addEvent', [EventController::class, 'addEvent'])->name('addEvent');
+        Route::post('/deletePost', [EventController::class, 'deleteEvent'])->name('deleteEvent');
 
         Route::get('/contentList', function () {
             return view('layouts.post.content_list');

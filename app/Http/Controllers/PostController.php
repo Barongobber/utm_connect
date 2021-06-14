@@ -42,4 +42,11 @@ class PostController extends Controller
 
         return view('layouts.post.table', compact('table'));
     }
+
+    public function addPost(Request $r){
+        $eventDesc = [
+            'event' => null,
+        ];
+        return view('layouts.post.add_post', compact('eventDesc'));
+    }
 }

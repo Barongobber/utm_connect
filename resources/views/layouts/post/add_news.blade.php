@@ -35,8 +35,8 @@
                                     <div class="col-sm-9">
                                         <select class="form-control">
                                             <option value="" disabled selected>Choose Category</option>
-                                            <option value="Sports" {{ old('category') === 'Sports' ? 'selected' : null }}>
-                                                Sports</option>
+                                            <option value="Sports" {{ old('category') === 'Sport' ? 'selected' : null }}>
+                                                Sport</option>
                                             <option value="Academic"
                                                 {{ old('category') === 'Academic' ? 'selected' : null }}>Academic</option>
                                             <option value="Arts or Music"

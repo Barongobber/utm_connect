@@ -8,6 +8,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PostController;
 use App\Models\Event;
 use App\Models\Feedback;
@@ -113,8 +114,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/addPost', [PostController::class, 'addPost'])->name('addPost');
         Route::get('/infoEvent/{id}', [EventController::class, 'infoEvent'])->name('infoEvent');
         Route::get('/editEvent/{id}', [EventController::class, 'editEvent'])->name('editEvent');
+
+        Route::post('/addNews', [NewsController::class, 'addNews'])->name('addNews');
+        Route::get('/addPost', function () {
+            return view('layouts.post.add_post');
+        });
         Route::post('/addEvent', [EventController::class, 'addEvent'])->name('addEvent');
-        Route::post('/deletePost', [EventController::class, 'deleteEvent'])->name('deleteEvent');
+        Route::post('/deleteEvent', [EventController::class, 'deleteEvent'])->name('deleteEvent');
 
         Route::get('/contentList', function () {
             return view('layouts.post.content_list');

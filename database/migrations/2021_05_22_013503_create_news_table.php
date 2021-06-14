@@ -19,10 +19,9 @@ class CreateNewsTable extends Migration
             $table->string('news_title');
             $table->string('news_content');
             $table->string('posted_on');
-            $table->string('slug')->unique();
             $table->string('news_pic1');
-            $table->string('news_pic2');
-            $table->string('news_pic3');
+            $table->string('news_pic2')->nullable();
+            $table->string('news_pic3')->nullable();
             $table->timestamps();
 
             $table->softDeletes();

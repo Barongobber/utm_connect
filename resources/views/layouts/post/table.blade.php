@@ -60,7 +60,7 @@
                 </div>
                 <div class="modal-body">Please choose your preference:</div>
                 <div class="modal-footer">
-                    <a class="btn btn-info" data-dismiss="modal" href="{{ url('addNews') }}">News</a>
+                    <a class="btn btn-info" href="{{ url('addNews') }}">News</a>
                     <a class="btn btn-primary" href="{{ url('addPost') }}">Event</a>
                 </div>
             </div>

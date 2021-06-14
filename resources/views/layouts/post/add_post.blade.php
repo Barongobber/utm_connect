@@ -49,7 +49,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Category<span style="color: red;">@if (!isset($eventDesc['isView']))*@endif</span></label>
                 <div class="col-sm-9">
-                  <select name="e_category" class="form-control" @if (isset($eventDesc['event'])) disabled @endif required>
+                  <select name="e_category" class="form-control" @if (isset($eventDesc['isView'])) disabled @endif required>
                     <option value="" selected>Choose Category</option>
                     <option value="Sport" @isset($eventDesc['event']) @if($eventDesc['event']['event_category'] == "Sport")
                       selected
@@ -76,7 +76,7 @@
                   @isset($eventDesc['event'])
                     value={{ $eventDesc['event']['closed_on'] }}
                   @endisset
-                  @if (isset($eventDesc['event'])) disabled @endif
+                  @if (isset($eventDesc['isView'])) disabled @endif
                   required>
                 </div>
               </div>
@@ -87,7 +87,7 @@
                   @isset($eventDesc['event'])
                     value={{ $eventDesc['event']['event_date'] }}
                   @endisset
-                  @if (isset($eventDesc['event'])) disabled @endif
+                  @if (isset($eventDesc['isView'])) disabled @endif
                   required>
                 </div>
               </div>
@@ -98,14 +98,14 @@
                   @isset($eventDesc['event'])
                     value={{ $eventDesc['event']['event_venue'] }}
                   @endisset
-                  @if (isset($eventDesc['event'])) disabled @endif
+                  @if (isset($eventDesc['isView'])) disabled @endif
                   required>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Open For<span style="color: red;">@if (!isset($eventDesc['isView']))*@endif</span></label>
                 <div class="col-sm-9">
-                  <select name="e_open_for" class="form-control" @if (isset($eventDesc['event'])) disabled @endif required>
+                  <select name="e_open_for" class="form-control" @if (isset($eventDesc['isView'])) disabled @endif required>
                     <option value="" selected>Choose</option>
                     <option value="Participants" @isset($eventDesc['event']) @if($eventDesc['event']['open_for'] == "Participants")
                       selected
@@ -125,14 +125,14 @@
                   @else
                     placeholder="Drop your Typeform/Gform's URL here"
                   @endif
-                  @if (isset($eventDesc['event'])) disabled @endif
+                  @if (isset($eventDesc['isView'])) disabled @endif
                   required>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Event Details<span style="color: red;">@if (!isset($eventDesc['isView']))*@endif</span></label>
                 <div class="col-sm-9">
-                  <textarea name="e_details" rows="8" type="text" class="form-control" placeholder="Write details of the event here"  @if (isset($eventDesc['event'])) disabled @endif  required>@isset($eventDesc['event']){{ $eventDesc['event']['event_details'] }}@endisset</textarea>
+                  <textarea name="e_details" rows="8" type="text" class="form-control" placeholder="Write details of the event here"  @if (isset($eventDesc['isView'])) disabled @endif  required>@isset($eventDesc['event']){{ $eventDesc['event']['event_details'] }}@endisset</textarea>
                 </div>
               </div>
               <div class="form-group row">

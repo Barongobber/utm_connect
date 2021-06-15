@@ -47,8 +47,8 @@ class NewsController extends Controller
             'news_content' => $r->news_content,
             'posted_on' => $today,
             'news_pic1' => $pic1name,
-            'news_pic2' => $pic1name,
-            'news_pic3' => $pic1name,
+            'news_pic2' => $pic2name,
+            'news_pic3' => $pic3name,
         ]);
         $news->save();
 

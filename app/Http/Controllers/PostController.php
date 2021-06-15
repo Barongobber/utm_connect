@@ -17,7 +17,7 @@ class PostController extends Controller
         if(count($events) == null && count($news) == 0) $posts = [];
         else if(count($events) == null) $posts = $news;
         else if(count($news) == null) $posts = $events;
-        else $posts = array_merge($events, $news);
+        else $posts = array_merge($events->toArray(), $news->toArray());
 
         $sortedPosts = collect($posts)->sortBy('posted_on')->toArray();
         //This is to sort if to the newest

@@ -160,5 +160,16 @@ class DatabaseSeeder extends Seeder
                 'feedback' => 'feedback3',
                 'rate_event' => 3,
         ]]);
+
+        DB::table('news')->insert([
+            'news_id' => 1,
+            'news_category' => 'Sport',
+            'news_title' => 'n1title',
+            'news_content' => 'n1content',
+            'posted_on' => Carbon::parse('2021-06-06'),
+            'news_pic1' => 'n1pic.PNG',
+            'news_pic2' => NULL,
+            'news_pic3' => NULL,
+        ]);
     }
 }

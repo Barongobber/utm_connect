@@ -1,6 +1,6 @@
 # ApplicationDevelopment
 
-This Repository is dedicated to our project in Application Development subject
+This Repository is dedicated to our project in Application Development. This is called PPI-UTM Connect web App
 
 ## Installation
 

@@ -49,12 +49,8 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('/user-home', [MemberController::class, 'index'])->name('user-home');
 
-    Route::get('/user-news', function(){
-        return view('client.news');
-    });
-    Route::get('/user-view-news', function(){
-        return view('client.view-news');
-    });
+    Route::get('/user-news', [NewsController::class, 'allNews'])->name('user-news');
+    Route::get('/user-view-news/{id}', [NewsController::class, 'singleNews'])->name('user-view-news');
 
     Route::get('/user-events', [EventController::class, 'allEventMember'])->name('user-events');
     Route::get('/user-view-event/{id}', [EventController::class, 'anEventMember'])->name('user-view-event');

@@ -31,132 +31,28 @@
 <section id="news" class="news-list">
     <div class="container-fluid">
     <div class="row news-list-row justify-content-center">
-              <div class="col-lg-4 col-md-6 mb-3 news-preview-column">
-                <div class="card bordered-col">
-                  <div class="card-body">
-                    <img class="news-content-img img-fluid" src="{{asset('projectad/news/img/2.jpg')}}" alt="news"/>
-                    <div class="text-news">
-                      <h3 class="news-list-title"><a class="title-anchor" href="{{url('user-view-news')}}"> Lorem Ipsum Dolor Sit Amet</a></h3>
-                    <div class="news-paragraph-preview">
-                      <p class="preview-para">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                    </div>
-                    <div class="news-preview-details ml-auto">
-                      <span class="post-details"> Posted by <a class="author-link" href="">Lorem Ipsum</a> on 31 - 02 - 2069</span>
-                      <span class="post-details"> Category: <a class="category-anchor" href="">Sports</a></span>
-                    </div>
-                  </div>
-                  </div>
+      @foreach ($allNews as $news)
+        
+      <div class="col-lg-4 col-md-6 mb-3 news-preview-column">
+        <div class="card bordered-col">
+          <div class="card-body">
+            <img class="news-content-img img-fluid" src="{{asset('images/news/' . $news->news_id . '/' . $news->news_pic1)}}" alt="news"/>
+            <div class="text-news">
+              <h3 class="news-list-title"><a class="title-anchor" href="{{route('user-view-news', $news->news_id)}}"> {{$news->news_title}}</a></h3>
+              <div class="news-paragraph-preview">
+                <p class="preview-para">
+                  {{$news->news_content}}</p>
                 </div>
-                
-              </div>
-              <div class="col-lg-4 col-md-6 mb-3 news-preview-column">
-                <div class="card bordered-col">
-                  <div class="card-body">
-                    <img class="news-content-img img-fluid" src="{{asset('projectad/news/img/1.jpg')}}" alt="news"/>
-                    <div class="text-news">
-                      <h3 class="news-list-title"><a class="title-anchor" href=""> Lorem Ipsum Dolor Sit Amet</a></h3>
-                      <div class="news-paragraph-preview">
-                        <p class="preview-para">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                    
-                      </div>
-                      <div class="news-preview-details ml-auto">
-                        <span class="post-details"> Posted by <a class="author-link" href="">Lorem Ipsum</a> on 31 - 02 - 2069</span>
-                        <span class="post-details"> Category: <a class="category-anchor" href="">Academic</a></span>
-                      </div>
-                    </div>
-                  </div>
+                <div class="news-preview-details ml-auto">
+                  <span class="post-details"> Posted by <a class="author-link" href="">Lorem Ipsum</a> on {{$news->posted_on}}</span>
+                  <span class="post-details"> Category: <a class="category-anchor" href="">{{$news->news_category}}</a></span>
                 </div>
-                
               </div>
-              <div class="col-lg-4 col-md-6 mb-3 news-preview-column">
-                <div class="card bordered-col">
-                  <div class="card-body">
-                    <img class="news-content-img img-fluid" src="{{asset('projectad/news/img/2.jpg')}}" alt="news"/>
-                    <div class="text-news">
-                      <h3 class="news-list-title"><a class="title-anchor" href=""> Lorem Ipsum Dolor Sit Amet</a></h3>
-                    <div class="news-paragraph-preview">
-                      <p class="preview-para">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                    </div>
-                    <div class="news-preview-details ml-auto">
-                      <span class="post-details"> Posted by <a class="author-link" href="">Lorem Ipsum</a> on 31 - 02 - 2069</span>
-                      <span class="post-details"> Category: <a class="category-anchor" href="">Sports</a></span>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-                
-              </div>
-              <div class="col-lg-4 col-md-6 mb-3 news-preview-column">
-                <div class="card bordered-col">
-                  <div class="card-body">
-                    <img class="news-content-img img-fluid" src="{{asset('projectad/news/img/1.jpg')}}" alt="news"/>
-                    <div class="text-news">
-                      <h3 class="news-list-title"><a class="title-anchor" href=""> Lorem Ipsum Dolor Sit Amet</a></h3>
-                      <div class="news-paragraph-preview">
-                        <p class="preview-para">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                    
-                      </div>
-                      <div class="news-preview-details ml-auto">
-                        <span class="post-details"> Posted by <a class="author-link" href="">Lorem Ipsum</a> on 31 - 02 - 2069</span>
-                        <span class="post-details"> Category: <a class="category-anchor" href="">Academic</a></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-              <div class="col-lg-4 col-md-6 mb-3 news-preview-column">
-                <div class="card bordered-col">
-                  <div class="card-body">
-                    <img class="news-content-img img-fluid" src="{{asset('projectad/news/img/2.jpg')}}" alt="news"/>
-                    <div class="text-news">
-                      <h3 class="news-list-title"><a class="title-anchor" href=""> Lorem Ipsum Dolor Sit Amet</a></h3>
-                    <div class="news-paragraph-preview">
-                      <p class="preview-para">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Enim sed faucibus turpis in eu mi bibendum.
-                      Habitasse platea dictumst vestibulum rhoncus est.
-                      Amet purus gravida quis blandit turpis cursus in hac habitasse.
-                      Viverra ipsum nunc aliquet bibendum enim.</p>
-                    </div>
-                    <div class="news-preview-details ml-auto">
-                      <span class="post-details"> Posted by <a class="author-link" href="">Lorem Ipsum</a> on 31 - 02 - 2069</span>
-                      <span class="post-details"> Category: <a class="category-anchor" href="">Sports</a></span>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-                
-              </div>
-              
-              
             </div>
           </div>
+          
+        </div>
+        @endforeach
     </div>
 </section>
 

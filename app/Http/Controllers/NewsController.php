@@ -12,20 +12,29 @@ class NewsController extends Controller
 {
     public function allNews(Request $r)
     {
-        $allnews = News::where('news_id', $r->id)->get();
-        $news = $allnews[0];
-
-        $today = new Carbon;
-
-        $posted_on = ($news->posted_on > $today);
-        $newsdesc = [
-            'news' => $news,
-            'posted_on' => $posted_on,
-        ];
+        $allNews = News::all()->sortBy('posted_on')->reverse();
 
         // Pass Post Collection to view
+        return view('client.news', compact('allNews'));
+    }
+
+    public function singleNews(Request $r){
+        $allNews = News::where('news_id', $r->id)->get();
+        $news = $allNews[0];
+
+        //Check if user can still participate
+        $today = new Carbon;
+        $posted = ($news->posted_on > $today);
+
+        $newsDesc = [
+            'news' => $news,
+            'posted' => $posted,
+        ];
         return view('client.view-news', compact('newsDesc'));
     }
+
+
+
 
     public function addNews(Request $r)
     {

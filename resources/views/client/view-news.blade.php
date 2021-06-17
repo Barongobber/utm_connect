@@ -44,21 +44,21 @@
                   <div class="carousel-item active">
                     <img
                       class="news-view-img"
-                      src="{{asset('projectad/news/img/1.jpg')}}"
+                      src="{{asset('images/news/' . $newsDesc['news']->news_id . '/' . $newsDesc['news']->news_pic1)}}"
                       alt="news"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="news-view-img"
-                      src="{{asset('projectad/news/img/2.jpg')}}"
+                      src="{{asset('images/news/' . $newsDesc['news']->news_id . '/' . $newsDesc['news']->news_pic2)}}"
                       alt="news"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="news-view-img"
-                      src="{{asset('projectad/news/img/3.jpg')}}"
+                      src="{{asset('images/news/' . $newsDesc['news']->news_id . '/' . $newsDesc['news']->news_pic3)}}"
                       alt="news"
                     />
                   </div>
@@ -70,7 +70,7 @@
                       class="selected"
                       data-slide-to="0"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{asset('projectad/news/img/1.jpg')}}" alt=""
+                      ><img class="img-fluid" src="{{asset('images/news/' . $newsDesc['news']->news_id . '/' . $newsDesc['news']->news_pic1)}}" alt=""
                     /></a>
                   </li>
                   <li class="list-inline-item">
@@ -78,7 +78,7 @@
                       id="carousel-selector-1"
                       data-slide-to="1"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{asset('projectad/news/img/2.jpg')}}" alt=""
+                      ><img class="img-fluid" src="{{asset('images/news/' . $newsDesc['news']->news_id . '/' . $newsDesc['news']->news_pic2)}}" alt=""
                     /></a>
                   </li>
                   <li class="list-inline-item">
@@ -86,44 +86,27 @@
                       id="carousel-selector-2"
                       data-slide-to="2"
                       data-target="#imgCarousel"
-                      ><img class="img-fluid" src="{{asset('projectad/news/img/3.jpg')}}" alt=""
+                      ><img class="img-fluid" src="{{asset('images/news/' . $newsDesc['news']->news_id . '/' . $newsDesc['news']->news_pic3)}}" alt=""
                     /></a>
                   </li>
                 </ol>
               </div>
 
               <div class="card-body mt-3">
-                <h3>Lorem Ipsum Dolor Sit Amet</h3>
+                <h3>{{ $newsDesc['news']->news_title }}</h3>
                 <div class="news-view-details mx-auto">
                   <span class="post-details">
-                    Posted by <a class="author-link" href="">Lorem Ipsum</a> on
-                    31 - 02 - 2069</span
+                    Posted by <a class="author-link" href="">Lorem Ipsum</a> </span
                   >
                   <span class="post-details">
                     Category:
-                    <a class="category-anchor" href="">Academic</a></span
+                    <a class="category-anchor" href="">{{ $newsDesc['news']->news_category }}</a></span
                   >
                 </div>
                 <hr />
 
                 <p class="view-para">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Enim sed faucibus turpis in eu mi bibendum. Habitasse platea
-                  dictumst vestibulum rhoncus est. Amet purus gravida quis
-                  blandit turpis cursus in hac habitasse. Viverra ipsum nunc
-                  aliquet bibendum enim.
-                </p>
-                <p class="view-para">
-                  In fermentum posuere urna nec tincidunt praesent. Id cursus
-                  metus aliquam eleifend mi in nulla posuere sollicitudin.
-                  Pellentesque habitant morbi tristique senectus et netus et
-                  malesuada. Elit eget gravida cum sociis natoque penatibus et
-                  magnis dis. Ac ut consequat semper viverra nam. Lorem ipsum
-                  dolor sit amet consectetur adipiscing elit. Fermentum odio eu
-                  feugiat pretium. Volutpat ac tincidunt vitae semper quis
-                  lectus nulla. Lacus vestibulum sed arcu non odio euismod
-                  lacinia at quis.
+                  {{ $newsDesc['news']->news_content }}
                 </p>
               </div>
             </div>

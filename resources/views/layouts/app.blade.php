@@ -42,6 +42,7 @@
 </div>
 @include('layouts.partials.footer')
 @include('layouts.partials.script_below')
+@yield('js')
 </body>
 
 </html>

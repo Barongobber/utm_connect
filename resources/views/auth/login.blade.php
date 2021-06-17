@@ -18,7 +18,7 @@
     <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 </head>
 
-<body class="bg-gradient-white"  style="background: {{url("images/output-onlinepngtools.png")}} center / contain no-repeat, rgb(255,255,255);">
+<body class="bg-gradient-white"  style="background: url('{{url('images/output-onlinepngtools.png')}}') center / contain no-repeat, rgb(255,255,255);">
     <div class="container">
 
         <div class="row justify-content-center swing animated">
@@ -28,7 +28,7 @@
                          <div class="row">
                              <div class="col-lg-6 d-none d-lg-flex">
                                  <div class="flex-grow-1 bg-login-image"
-                                     style="background: {{url('images/dogs/logo-ppi-utm.png')}} center / contain no-repeat;">
+                                     style="background: url('{{url('images/dogs/logo-ppi-utm.png')}}') center / contain no-repeat;">
                                  </div>
                              </div>
                              <div class="col-lg-6">

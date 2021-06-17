@@ -5,8 +5,10 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PostController;
@@ -32,6 +34,7 @@ Auth::routes();
 Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/check_user', [LoginController::class, 'check_user'])->name('check_user');
+Route::post('/sendEmail', [EmailController::class, 'sendEmail'])->name('sendEmail');
 
 Route::get('/cobaBlast', function () {
     return view('try_email');
@@ -125,12 +128,16 @@ Route::middleware(['auth'])->group(function () {
 
 
         //blasting
-        Route::get('/chooseRecipients', function () {
-            return view('layouts.blasting.choose_recipients');
-        });
-        Route::get('/listBlasting', function () {
-            return view('layouts.blasting.list_blasting');
-        });
+        Route::post('/addBlasting', [CampaignController::class, 'campaignSession'])->name('addBlasting');
+        Route::post('/tempImg', [CampaignController::class, 'addImg'])->name('tempImg');
+        Route::post('/renderTemplate', [CampaignController::class, 'renderTemplate'])->name('renderTemplate');
+        
+        // Route::get('/chooseRecipients', function () {
+        //     return view('layouts.blasting.choose_recipients');
+        // });
+        Route::post('/sendBlasting', [CampaignController::class, 'sendCampaign'])->name('sendBlasting');
+        Route::get('/chooseRecipients', [CampaignController::class, 'contactList'])->name('chooseRecipients');
+        Route::get('/listBlasting', [CampaignController::class, 'campaignList'])->name('listBlasting');
         Route::get('/makeTemplate', function () {
             return view('layouts.blasting.make_template');
         });

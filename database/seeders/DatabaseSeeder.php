@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             [
                 'matrix_card' => 'm1matric',
                 'name' => 'm1name',
-                'email' => 'm1email@gmail.com',
+                'email' => 'todopsain11@gmail.com',
                 'password' => bcrypt('m1password'),
                 'batch' => 2020,
                 'program_code' => 'm1program_code',
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             ],[
                 'matrix_card' => 'm2matric',
                 'name' => 'm2name',
-                'email' => 'm2email@gmail.com',
+                'email' => 'technoinfosys05@gmail.com',
                 'password' => bcrypt('m2password'),
                 'batch' => 2020,
                 'program_code' => 'm2program_code',
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             ],[
                 'matrix_card' => 'm3matric',
                 'name' => 'm3name',
-                'email' => 'm3email@gmail.com',
+                'email' => 'shikifujin11@protonmail.ch',
                 'password' => bcrypt('m3password'),
                 'batch' => 2020,
                 'program_code' => 'm3program_code',
@@ -162,6 +162,7 @@ class DatabaseSeeder extends Seeder
         ]]);
 
         DB::table('news')->insert([
+            [
             'news_id' => 1,
             'news_category' => 'Sport',
             'news_title' => 'n1title',
@@ -169,7 +170,21 @@ class DatabaseSeeder extends Seeder
             'posted_on' => Carbon::parse('2021-06-06'),
             'news_pic1' => 'n1pic.PNG',
             'news_pic2' => NULL,
-            'news_pic3' => NULL,
+            'news_pic3' => NULL,]]);
+            
+        DB::table('campaign_list')->insert([
+            [
+                'campaign_id'=> 1,
+                'campaign_name'=>'Halo',
+                'subject'=>'Ya Hallo',
+                'total_participant'=>69,
+            ],
+            [
+                'campaign_id'=> 2,
+                'campaign_name'=>'Halo2',
+                'subject'=>'Ya Hallo2',
+                'total_participant'=>420,
+            ]
         ]);
     }
 }

@@ -7,16 +7,25 @@
     <div class="tabbable">
         <div class="tab-content">
             <div class="card-header py-3">
-                <p class="text-primary m-0 font-weight-bold">Title of Campaign</p>
+            @if(session()->has('campaign_title'))
+                <p class="text-primary m-0 font-weight-bold">{{session()->get('campaign_title')}}</p>
+            @else
+                <p class="text-primary m-0 font-weight-bold">Raenek isine</p>
+            @endif
             </div>
             <div class="card-body">
                 <div class="col-sm-12">
                     <div class="row mb-3">
                         <div class="col-sm-6">
+                            @if(session()->has('total_receiver'))
+                            <i class="fa fa-check-circle-o" style="color:green"></i>
+                            <big class="text-dark">Recipients</big><br>                            
+                            <small>{{session()->get('total_receiver')}} recipients</small>
+                            @else
                             <i class="fa fa-check-circle-o"></i>
                             <big class="text-dark">Recipients</big><br>
                             <small>0 recipients</small>
-                            
+                            @endif
                         </div>
                         <div class="col-sm-6 text-right">
                             <button onclick="window.location.href='{{url('chooseRecipients')}}'" class="btn btn-primary col-sm-4">Choose Recipients</button>
@@ -24,10 +33,15 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-sm-6">
+                            @if(session()->has('subject'))
+                            <i class="fa fa-check-circle-o" style="color:green;"></i>
+                            <big class="text-dark">Campaign's Subject</big><br>                            
+                            <small id="subject-text">{{session()->get('subject')}}</small>
+                            @else
                             <i class="fa fa-check-circle-o"></i>
                             <big class="text-dark">Campaign's Subject</big><br>
-                            <small>Subject campaign goes here....</small>
-                            
+                            <small id="subject-text">Subject campaign goes here....</small>
+                            @endif
                         </div>
                         <div class="col-sm-6 text-right">
                             <button data-toggle="modal" data-target="#subjectModal"  class="btn btn-primary col-sm-4">Change Subject</button>
@@ -35,10 +49,15 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-sm-6">
+                            @if(session()->has('design_email'))
+                            <i class="fa fa-check-circle-o" style="color:green;"></i>
+                            <big class="text-dark">Content</big><br>
+                            <small>Email designed</small>
+                            @else
                             <i class="fa fa-check-circle-o"></i>
                             <big class="text-dark">Content</big><br>
                             <small>Design your email's content</small>
-                            
+                            @endif
                         </div>
                         <div class="col-sm-6 text-right">
                             <button onclick="window.location.href='{{url('makeTemplate')}}'" class="btn btn-primary col-sm-4">Design Email</button>
@@ -46,10 +65,15 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-sm-6">
+                            @if(session()->has('senderemail'))
+                            <i class="fa fa-check-circle-o" style="color:green;"></i>
+                            <big class="text-dark">Sender</big><br>                            
+                            <small>{{session()->get('host')}}:{{session()->get('port')}} {{session()->get('senderemail')}} </small>
+                            @else
                             <i class="fa fa-check-circle-o"></i>
                             <big class="text-dark">Sender</big><br>
                             <small>Sender's email configuration</small>
-                            
+                            @endif
                         </div>
                         <div class="col-sm-6 text-right">
                             <button data-toggle="modal" data-target="#senderModal" class="btn btn-primary col-sm-4">Configure sender</button>
@@ -60,7 +84,7 @@
             <div class="card-footer">
                 <div class="text-right">
                     <button type="button" class="btn btn-danger btn-shadow" onclick="window.location.href='{{url('listBlasting')}}'">Cancel</button>
-                    <button type="submit" class="btn btn-success btn-shadow">Send</button>
+                    <button type="submit" id="send-new-campaign" class="btn btn-success btn-shadow">Send</button>
                 </div>
             </div>
         </div>
@@ -77,18 +101,18 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form-name-campaign">
+            <form id="form-subject-campaign">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="name-new-campaign">Write a subject</label>
-                        <input type="text" class="form-control bg-gray-200" placeholder="Write your subject here" required>
+                        <label for="subject-new-campaign">Write a subject</label>
+                        <input type="text" id="subject-new-campaign" class="form-control bg-gray-200" placeholder="Write your subject here" required>
                     </div>
                 </div>
-            </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-success" onclick="">Save</button>
                 </div>
+            </form>
         </div>
     </div>
 </div>
@@ -102,31 +126,89 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form-name-campaign">
+            <form id="form-campaign-sender">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name-new-campaign">Mail Server</label>
-                        <input type="text" class="form-control bg-gray-200" placeholder="smtp.gmail.com" required>
+                        <input type="text" id="host" class="form-control bg-gray-200" placeholder="smtp.gmail.com" required>
                     </div>
                     <div class="form-group">
                         <label for="name-new-campaign">Email</label>
-                        <input type="text" class="form-control bg-gray-200" placeholder="abc@gmail.com" required>
+                        <input type="text" id="email" class="form-control bg-gray-200" placeholder="abc@gmail.com" required>
                     </div>
                     <div class="form-group">
                         <label for="name-new-campaign">Email's Password</label>
-                        <input type="text" class="form-control bg-gray-200" placeholder="Password Email" required>
+                        <input type="text" id="password" class="form-control bg-gray-200" placeholder="Password Email" required>
                     </div>
                     <div class="form-group">
                         <label for="name-new-campaign">Port Server</label>
-                        <input type="text" class="form-control bg-gray-200" placeholder="587" required>
+                        <input type="text" id="port" class="form-control bg-gray-200" placeholder="587" required>
                     </div>
                 </div>
-            </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-success" onclick="">Save</button>
                 </div>
+            </form>
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('js')
+<script>
+$('#form-subject-campaign').on('submit', function(e){
+    e.preventDefault();
+    var subject= $('#subject-new-campaign').val();
+    console.log(subject)
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            subject: subject
+        },
+        url: '/addBlasting',
+        success: function(response) {
+            window.location.href = '/manageBlast'
+        }
+    })
+
+});
+$('#form-campaign-sender').on('submit', function(event) {
+            event.preventDefault();
+            var host = $('#host').val();
+			var email = $('#email').val();
+			var password = $('#password').val();
+			var port = $('#port').val();
+
+            $.ajax({
+                type: 'POST',
+                data: {
+                    host: host,
+					email : email,
+					password : password,
+					port : port
+                },
+                url: '/addBlasting',
+                success: function(response) {
+                    window.location.href = '/manageBlast'
+                }
+            })
+        });
+
+        $('#send-new-campaign').click(function() {
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/sendBlasting',
+                success: function(response) {
+                    window.location.href = '/listBlasting'
+                    alert("Campaign sent successfully!")
+                }
+            })
+
+        });
+
+</script>
 @endsection

@@ -89,8 +89,7 @@
                                 class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a
                             class="dropdown-item" href="#"><i
                                 class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
-                            data-target="#logoutModal"><i
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}" ><i
                                 class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                     </div>
                 </div>

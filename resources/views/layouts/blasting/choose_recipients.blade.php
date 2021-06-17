@@ -13,43 +13,34 @@
         <div class="tab-content">
             <div class="card-header py-3">
                 <p class="text-primary m-0 font-weight-bold">List of Recipients</p>
+                <span id="count_checked" class="mb-2"><b>0</b> contact(s) selected</span>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr align="center">
-                                <th><input type="checkbox" name="" id=""></th>
+                                <th><input type="checkbox" name="" class="checkAll" id="checkAllContact"></th>
                                 <th>Name</th>
-                                <th>Gender</th>
+                                <th>Email Address</th>
                                 <th>Degree</th>
                                 <th>Batch</th>
                                 <th>Status in ISS</th>
-                                <th>Faculty</th>
                                 <th>Major</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($contacts as $contact)
                             <tr align="center">
-                                <th><input type="checkbox" name="" id=""></th>
-                                <td>DJ Khadijah</td>
-                                <td>Female</td>
-                                <td>UG</td>
-                                <td>2018/2019-2</td>
-                                <td>President</td>
-                                <td>Engineering</td>
-                                <td>Mechanical</td>
+                                <th><input type="checkbox" class="checkSingle" name="" id="{{$contact->email}}"></th>
+                                <td>{{$contact->name}}</td>
+                                <td>{{$contact->email}}</td>
+                                <td>{{$contact->degree}}</td>
+                                <td>{{$contact->batch}}</td>
+                                <td>{{$contact->grant_desc}}</td>
+                                <td>{{$contact->program_code}}</td>
                             </tr>
-                            <tr align="center">
-                                <th><input type="checkbox" name="" id=""></th>
-                                <td>DJ Khadijah</td>
-                                <td>Female</td>
-                                <td>UG</td>
-                                <td>2018/2019-2</td>
-                                <td>President</td>
-                                <td>Engineering</td>
-                                <td>Mechanical</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -71,7 +62,7 @@
             <div class="modal-body">Select "Okay" below if you are ready to proceed to the next step.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger" href="#">Okay</a>
+                <a class="btn btn-danger" id="okay" href="#">Okay</a>
             </div>
         </div>
     </div>
@@ -218,10 +209,77 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success">Apply</button>
+                    <button type="submit" id="apply" class="btn btn-success">Apply</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+
+<!-- @if(session()->has('id_contact'))
+    @php
+        $ids=session()->get('id_contact');
+    @endphp
+@else
+    @php
+        $ids=array();
+    @endphp
+@endif -->
+<script>
+$("#checkAllContact").click(function() {
+            $(".checkSingle").prop('checked', $(this).prop('checked'));
+
+        });
+        $("input[type=checkbox]").click(function() {
+            if (!$(this).prop("checked")) {
+                $("#checkAllContact").prop("checked", false);
+            }
+        });
+       //text
+       var single = $(".checkSingle");
+        var all = $(".checkAll"); 
+        single.change(function(){
+            $("#count_checked").html("<b>" + single.filter(":checked").length + "</b> contact(s) selected");
+            if (single.length == single.filter(":checked").length){
+                all.prop("checked", true);
+            }
+        });
+        all.change(function(){
+            $("#count_checked").html("<b>" + single.filter(":checked").length + "</b> contact(s) selected");
+        });
+
+        // var jQueryArray = {{json_encode($ids)}};
+        // $.each(jQueryArray, function(key, value){
+        //     $("#" + value).prop("checked", true); 
+        //     $("#count_checked").html("<b>" + $(".checkSingle:checked").length + "</b> Kontak Terpilih");
+        // });
+
+        $("#okay").on('click', function(e){
+            var contact = [];
+            var total = $('.checkSingle:checked');
+            $.each(total, function() {
+            contact.push($(this).attr('id'));
+            });
+
+            if (total.length == 0) {
+                alert("You ain't chosen nothing");
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        total_receiver: total.length,
+                        id_contact: contact
+                    },
+                    url: '/addBlasting',
+                    success: function(response) {
+                        window.location.href = '/manageBlast'
+                    }
+                });
+            };
+
+        });
+</script>
 @endsection

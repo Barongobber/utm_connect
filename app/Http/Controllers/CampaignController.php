@@ -72,7 +72,7 @@ class CampaignController extends Controller
         $path=public_path().'/images/campaign/';
         $img->move($path,$imgname);
         
-        session()->put('path_img_'.$imgID, $path);
+        session()->put('path_img_'.$imgID, '/images/campaign/'.$imgname);
 
         // session()->push('path_img_'.$imgID, $path);
         // echo json_encode(session()->get('path_img_'.$imgID));
@@ -94,6 +94,8 @@ class CampaignController extends Controller
             $contacts= session()->get('id_contact'); 
             $ctitle=session()->get('campaign_title');
             $total_receiver=session()->get('total_receiver');
+            $imglogo=session()->get('path_img_0');
+            $imgheader=session()->get('path_img_1');
             
             $mail->Host=$host;
             $mail->Port=$port;
@@ -104,6 +106,8 @@ class CampaignController extends Controller
             $mail->setFrom($senderemail, 'UTM Connect');
             
             $content = session()->get('design_email');
+            $mail->AddEmbeddedImage(public_path($imglogo), 'logo');
+            $mail->AddEmbeddedImage(public_path($imgheader), 'header');
             
             $mail->isHTML(true);
 
@@ -136,10 +140,10 @@ class CampaignController extends Controller
 
     public function renderTemplate(Request $r){
         $title_template = $r->title_template;
-        // $imgLogo = session()->get('path_img_0');
-        // $imgHeader = session()->get('path_img_1');
-        $imgLogo = "";
-        $imgHeader = "";
+        $imgLogo = session()->get('path_img_0');
+        $imgHeader = session()->get('path_img_1');
+        // $imgLogo = "";
+        // $imgHeader = "";
         if($r->has('heading_template_1')){
             $heading_template_1 = $r->heading_template_1;
         }
@@ -171,7 +175,7 @@ class CampaignController extends Controller
                                             <td align="center" valign="top" class="textContent">
                                                 <img id="logo-template"
                                                     style="height: 80px; width:auto; margin-left: auto; margin-right: auto; margin-bottom: 2em;"
-                                                    src="'.$imgLogo.'"
+                                                    src="cid:logo"
                                                     alt="">
                                                 <h1
                                                     style="color:black;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:1em;text-align:center;">
@@ -179,8 +183,8 @@ class CampaignController extends Controller
                                                 <div
                                                     '.$subtitle_template.'</div>
                                                 <img id="img-template-1"
-                                                    style="width: 440px; height: 125px;"
-                                                    src="'.$imgHeader.'"
+                                                    style="width: 440px; height: auto;"
+                                                    src="cid:header"
                                                     alt="">
                                             </td>
                                         </tr>

@@ -52,7 +52,7 @@
                             @if(session()->has('design_email'))
                             <i class="fa fa-check-circle-o" style="color:green;"></i>
                             <big class="text-dark">Content</big><br>
-                            <small>Email designed</small>
+                            <small>Email designed </small>
                             @else
                             <i class="fa fa-check-circle-o"></i>
                             <big class="text-dark">Content</big><br>
@@ -149,10 +149,12 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-success" onclick="">Save</button>
                 </div>
+                
             </form>
         </div>
     </div>
 </div>
+<iframe srcdoc="{{session()->get('design_email')}}" frameborder="0"></iframe>
 
 @endsection
 

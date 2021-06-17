@@ -131,7 +131,7 @@ class DatabaseSeeder extends Seeder
         DB::table('member')->insert([
             'matrix_card' => 'm4matric',
             'name' => 'm4name',
-            'email' => 'm4email@gmail.com',
+            'email' => 'barongobber@gmail.com',
             'password' => bcrypt('m4password'),
             'batch' => 2020,
             'program_code' => 'm4program_code',

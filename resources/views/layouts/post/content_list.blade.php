@@ -36,17 +36,23 @@
           </tr>
         @endisset
       @endforeach
-        <tr class="news type-content">
-          <td>Pembukaan Acara Academic Award</td>
-          <td align="center">10 Feb 2021</td>
-          <td align="center">28 Feb 2021</td>
+      @foreach ($table['sortedPosts'] as $index => $news)
+      @isset($news['news_id'])
+      <tr class="news type-content">
+          <td>{{ $news['news_title'] }}</td>
+          <td align="center">{{ $news['posted_on'] }}</td>
+          <td align="center">{{ $news['posted_on'] }}</td>
           <td align="center"><button style="padding: 1px;"  class="btn col-sm-9 btn-warning">News</button></td>
           <td align="center">
-            <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-info"></i></button>
-            <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-dark" ><i class="fa fa-pencil-square-o"></i></button>
-            <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-danger" ><i class="fa fa-trash-o"></i></button>
+            <a href="{{ route('infoNews', $news['news_id']) }}" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-info"></i></a>
+            <a href="{{ route('editNews', $news['news_id']) }}" style="padding: 1px 12px;" class="btnAction btn btn-dark" ><i class="fa fa-pencil-square-o"></i></a>
+            <form action="{{ route('deleteNews') }}" method="POST" enctype="multipart/form-data">@csrf
+              <button type="submit" style="padding: 1px 12px;" class="btnAction btn btn-danger" name="id" value="{{ $news['news_id'] }}" ><i class="fa fa-trash-o"></i></button>
+            </form>
           </td>
         </tr>
+      @endisset
+    @endforeach
       </tbody>
     </table>
   </div>

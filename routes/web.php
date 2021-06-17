@@ -115,6 +115,10 @@ Route::middleware(['auth'])->group(function () {
             return view('layouts.post.add_news');
         });
         Route::post('/addNews', [NewsController::class, 'addNews'])->name('addNews');
+        Route::get('/infoNews/{id}', [NewsController::class, 'infoNews'])->name('infoNews');
+        Route::get('/editNews/{id}', [NewsController::class, 'editNews'])->name('editNews');
+        Route::post('/deleteNews', [NewsController::class, 'deleteNews'])->name('deleteNews');
+
         Route::get('/addPost', [PostController::class, 'addPost'])->name('addPost');
         Route::get('/infoEvent/{id}', [EventController::class, 'infoEvent'])->name('infoEvent');
         Route::get('/editEvent/{id}', [EventController::class, 'editEvent'])->name('editEvent');

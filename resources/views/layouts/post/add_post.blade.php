@@ -140,10 +140,10 @@
                 @if (!isset($eventDesc['event']))
                   <span style="color: red;">*</span>
                 @endif
-                @if ($eventDesc['event']['event_pic1'] != null)
+                {{-- @if ($eventDesc['event']['event_pic1'] != null)
                   (set) @else
                   (not set)
-                @endif
+                @endif --}}
                 </label>
                 @if (isset($eventDesc['isView']))
                 <img src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic2) }}" alt="">
@@ -158,10 +158,10 @@
               </div>
               <div class="form-group row">
                 <label for="contact-province" class="col-sm-3 col-form-label">Picture 2
-                @if ($eventDesc['event']['event_pic2'] != null)
+                {{-- @if ($eventDesc['event']['event_pic2'] != null)
                   (set) @else
                   (not set)
-                @endif
+                @endif --}}
                 </label>
                 @if (isset($eventDesc['isView']))
                 <img src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic2) }}" alt="">
@@ -173,10 +173,10 @@
               </div>
               <div class="form-group row">
                 <label for="contact-city" class="col-sm-3 col-form-label">Picture 3
-                @if ($eventDesc['event']['event_pic1'] != null)
+                {{-- @if ($eventDesc['event']['event_pic1'] != null)
                   (set) @else
                   (not set)
-                @endif
+                @endif --}}
                 </label>
                 @if (isset($eventDesc['isView']))
                 <img src="{{ asset('images/event/' . $eventDesc['event']->event_id . '/' . $eventDesc['event']->event_pic3) }}" alt="">

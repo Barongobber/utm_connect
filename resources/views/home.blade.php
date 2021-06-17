@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }} <br>
+                    @if (session('user_email'))
+                        {{ session('user_email') }} <br>
+                    @endif
                 </div>
             </div>
         </div>

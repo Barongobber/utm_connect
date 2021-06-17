@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>UTM - Connect | Login</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>UTM - Connect | Log in</title>
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="{{asset('fonts/fontawesome-all.min.css')}}">
@@ -16,7 +18,7 @@
     <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 </head>
 
-<body class="bg-gradient-white"  style="background: {{url("images/output-onlinepngtools.png")}} center / contain no-repeat, rgb(255,255,255);">
+<body class="bg-gradient-white"  style="background: url('{{url('images/output-onlinepngtools.png')}}') center / contain no-repeat, rgb(255,255,255);">
     <div class="container">
 
         <div class="row justify-content-center swing animated">
@@ -26,15 +28,20 @@
                          <div class="row">
                              <div class="col-lg-6 d-none d-lg-flex">
                                  <div class="flex-grow-1 bg-login-image"
-                                     style="background: {{url('images/dogs/logo-ppi-utm.png')}} center / contain no-repeat;">
+                                     style="background: url('{{url('images/dogs/logo-ppi-utm.png')}}') center / contain no-repeat;">
                                  </div>
                              </div>
                              <div class="col-lg-6">
                                  <div class="p-5">
                                      <div class="text-center">
                                          <h4 class="text-dark mb-4"> <strong>Welcome to PPI UTM-Connect</strong></h4>
+                                     @if (session()->has('msg'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('message') }}
+                                        </div>
+                                     @endif
                                      </div>
-                                     <form class="user" method="POST" action="{{ route('login') }}">
+                                     <form class="user" method="POST" action="{{ route('check_user') }}">
                                          @csrf
                                          <div class="form-group"><input
                                                  class="form-control form-control-user @error('email') is-invalid @enderror"
@@ -59,7 +66,7 @@
                                          </div>
                                          <button class="btn btn-primary btn-block text-white btn-user" type="submit"
                                              data-toggle="modal" data-target="#myModal"
-                                             style="background: rgb(230,32,43);">Login</button>
+                                             style="background: rgb(230,32,43);">Log in</button>
                                          <hr>
                                      </form>
                                      <div class="form-group row">
@@ -67,7 +74,6 @@
                                              <div class="form-check">
                                                  <input class="form-check-input" type="checkbox" name="remember"
                                                      id="remember" {{ old('remember') ? 'checked' : '' }}>
- 
                                                  <label class="form-check-label" for="remember">
                                                      {{ __('Remember Me') }}
                                                  </label>
@@ -89,13 +95,12 @@
                      </div>
                  </div>
              </div>
-         </div> 
- 
+         </div>
+
      </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-            
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -107,17 +112,16 @@
                             <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
                             <span class="swal2-success-line-tip"></span>
                             <span class="swal2-success-line-long"></span>
-                            <div class="swal2-success-ring"></div> 
+                            <div class="swal2-success-ring"></div>
                             <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
                             <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
                         </div>
-                        <center class="success-login">Login Success!!</center>
+                        <center class="success-login">Log in Success!!</center>
                     </div>
                     <div class="modal-footer">
                     <button type="button" onclick="login();" class="btn btn-success" data-dismiss="modal">Ok</button>
                     </div>
                 </div>
-            
             </div>
         </div>
     </div>

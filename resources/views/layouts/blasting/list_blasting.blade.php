@@ -19,16 +19,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach ($campaigns as $campaign)
                             <tr>
-                                <td>Meeting Invitation for ITS</td>
-                                <td align="center">International Talks' Meeting Invitation</td>
-                                <td align="center">10</td>
+                                <td>{{$campaign->campaign_name}}</td>
+                                <td align="center">{{$campaign->subject}}</td>
+                                <td align="center">{{$campaign->total_participant}}</td>
                                 <td align="center">
                                     <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-info"></i></button>
                                     <a href="" data-toggle="modal" data-target="#delFeedbackModal"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>Announcement for ITS</td>
                                 <td align="center">International Talks' Meeting Invitation</td>
                                 <td align="center">21</td>
@@ -36,7 +37,8 @@
                                     <button type="button" style="padding: 1px 12px;" class="btnAction btn btn-info" ><i class="fa fa-info"></i></button>
                                     <a href="" data-toggle="modal" data-target="#delFeedbackModal"><button type="button" style="padding: 1px 12px;" class="btnAction btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
                                 </td>
-                            </tr>
+                            </tr> -->
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -57,16 +59,40 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name-new-campaign">Write a campaign's title</label>
-                        <input type="text" class="form-control bg-gray-200" placeholder="Write your title here" required>
+                        <input type="text" id="campaign_title" name="campaign_title" class="form-control bg-gray-200" placeholder="Write your title here" required>
                     </div>
                 </div>
-            </form>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success" onclick="window.location.href='{{url('manageBlast')}}'">Make</button>
+                    <button type="submit" class="btn btn-success">Make</button>
                 </div>
+            </form>
         </div>
     </div>
 </div>
 
+
+@endsection
+
+@section('js')
+<script>
+    $(function() {
+        $('#form-name-campaign').on('submit', function(event) {
+            event.preventDefault();
+            var name = $('#campaign_title').val();
+
+            $.ajax({
+                type: 'POST',
+                data: {
+                    name: name
+                },
+                url: '/addBlasting',
+                success: function(response) {
+                    console.log(name)
+                    window.location.href = '/manageBlast'
+                }
+            });
+        })
+    })
+</script>
 @endsection

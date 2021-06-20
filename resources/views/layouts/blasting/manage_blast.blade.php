@@ -19,7 +19,7 @@
                         <div class="col-sm-6">
                             @if(session()->has('total_receiver'))
                             <i class="fa fa-check-circle-o" style="color:green"></i>
-                            <big class="text-dark">Recipients</big><br>                            
+                            <big class="text-dark">Recipients</big><br>
                             <small>{{session()->get('total_receiver')}} recipients</small>
                             @else
                             <i class="fa fa-check-circle-o"></i>
@@ -35,7 +35,7 @@
                         <div class="col-sm-6">
                             @if(session()->has('subject'))
                             <i class="fa fa-check-circle-o" style="color:green;"></i>
-                            <big class="text-dark">Campaign's Subject</big><br>                            
+                            <big class="text-dark">Campaign's Subject</big><br>
                             <small id="subject-text">{{session()->get('subject')}}</small>
                             @else
                             <i class="fa fa-check-circle-o"></i>
@@ -67,7 +67,7 @@
                         <div class="col-sm-6">
                             @if(session()->has('senderemail'))
                             <i class="fa fa-check-circle-o" style="color:green;"></i>
-                            <big class="text-dark">Sender</big><br>                            
+                            <big class="text-dark">Sender</big><br>
                             <small>{{session()->get('host')}}:{{session()->get('port')}} {{session()->get('senderemail')}} </small>
                             @else
                             <i class="fa fa-check-circle-o"></i>
@@ -138,7 +138,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name-new-campaign">Email's Password</label>
-                        <input type="text" id="password" class="form-control bg-gray-200" placeholder="Password Email" required>
+                        <input type="password" id="password" class="form-control bg-gray-200" placeholder="Password Email" required>
                     </div>
                     <div class="form-group">
                         <label for="name-new-campaign">Port Server</label>
@@ -149,7 +149,7 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-success" onclick="">Save</button>
                 </div>
-                
+
             </form>
         </div>
     </div>

@@ -2,7 +2,13 @@
 
 @section('content')
 <div class="d-sm-flex justify-content-between align-items-center">
+  @if (isset($eventDesc['isEditing']))
+  <h3 class="text-dark mb-4">Edit Event</h3>
+  @elseif (isset($eventDesc['isView']))
+  <h3 class="text-dark mb-4">Event Information</h3>
+  @else
   <h3 class="text-dark mb-4">Add Event</h3>
+  @endif
 </div>
 <div class="mb-3">
   <a class="btn btn-shadow btn-danger" href="{{ route('table') }}">

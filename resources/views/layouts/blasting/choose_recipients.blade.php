@@ -273,9 +273,9 @@ $("#checkAllContact").click(function() {
                         total_receiver: total.length,
                         id_contact: contact
                     },
-                    url: '/addBlasting',
+                    url: "{{ route('addBlasting')}}",
                     success: function(response) {
-                        window.location.href = '/manageBlast'
+                        window.location.href = "{{url('manageBlast')}}";
                     }
                 });
             };

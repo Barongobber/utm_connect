@@ -170,9 +170,9 @@ $('#form-subject-campaign').on('submit', function(e){
         data: {
             subject: subject
         },
-        url: '/addBlasting',
+        url: "{{ route('addBlasting')}}",
         success: function(response) {
-            window.location.href = '/manageBlast'
+            window.location.href = "{{url('manageBlast')}}"
         }
     })
 
@@ -192,9 +192,9 @@ $('#form-campaign-sender').on('submit', function(event) {
 					password : password,
 					port : port
                 },
-                url: '/addBlasting',
+                url: "{{ route('addBlasting')}}",
                 success: function(response) {
-                    window.location.href = '/manageBlast'
+                    window.location.href = "{{url('manageBlast')}}"
                 }
             })
         });
@@ -203,10 +203,10 @@ $('#form-campaign-sender').on('submit', function(event) {
             event.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: '/sendBlasting',
+                url: "{{ route('sendBlasting')}}",
                 success: function(response) {
-                    window.location.href = '/listBlasting'
-                    alert("Campaign sent successfully!")
+                    window.location.href = "{{url('listBlasting')}}";
+                    alert("Campaign sent successfully!");
                 }
             })
 

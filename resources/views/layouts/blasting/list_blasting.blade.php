@@ -86,10 +86,10 @@
                 data: {
                     name: name
                 },
-                url: '/addBlasting',
+                url: "{{ route('addBlasting')}}",
                 success: function(response) {
                     console.log(name)
-                    window.location.href = '/manageBlast'
+                    window.location.href = "{{url('manageBlast')}}";
                 }
             });
         })

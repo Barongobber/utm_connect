@@ -178,9 +178,9 @@ function save_template() {
             isi_template_2: isi_template_2,
             subtitle_template: subtitle_template
         },
-        url: '/renderTemplate',
+        url: "{{ route('renderTemplate')}}",
         success: function(response) {
-            window.location.href = '/manageBlast'
+            window.location.href = "{{url('manageBlast')}}"
         }
     })
 }

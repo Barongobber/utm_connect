@@ -7,6 +7,10 @@
   <div class="tabbable">
     <div class="tab-content">
       <div class="card-body">
+      <div class="d-sm-flex justify-content-between align-items-center mb-4">
+        <div>
+          <button class="btn-primary" style="border-radius: 10px;"><i class="fa fa-file-excel-o"></i> Import CSV</button>
+        </div>
         <div class="mb-3 text-right">
             <div class="dropdown" >
                 <button class="btn-secondary dropdown-toggle p-1" style="border-radius: 10px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,6 +22,7 @@
                 </div>
             </div>
         </div>
+      </div>
         <div class="table-responsive">
           <form method="POST" action="{{ route('changeGrant') }}" enctype="multipart/form-data">
           @csrf

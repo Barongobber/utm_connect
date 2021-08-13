@@ -9,7 +9,11 @@
       <div class="card-body">
       <div class="d-sm-flex justify-content-between align-items-center mb-4">
         <div>
-          <button class="btn-primary" style="border-radius: 10px;"><i class="fa fa-file-excel-o"></i> Import CSV</button>
+          <form action="{{ route('memberCSV') }}" method="POST" enctype="multipart/form-data" >
+          @csrf
+            <input type="file" class="btn-primary" style="border-radius: 10px;" name="csv_file" required>
+            <button type="submit" class="btn-primary" style="border-radius: 10px;"><i class="fa fa-file-excel-o"></i> Import CSV</button>
+          </form>
         </div>
         <div class="mb-3 text-right">
             <div class="dropdown" >
@@ -30,7 +34,7 @@
               <thead>
                 <tr align="center">
                   <th>Name</th>
-                  <th>Matrix No</th>
+                  <th>Matric No</th>
                   <th>Program Code</th>
                   <th>Role</th>
                   <th>Action Button</th>

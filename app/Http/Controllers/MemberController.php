@@ -48,4 +48,35 @@ class MemberController extends Controller
 
         return redirect($route);
     }
+
+    public function memberCSV(Request $r){
+        $csv_file = $r->file('csv_file');
+        $file_extension = $csv_file->getClientOriginalExtension();
+
+        if($file_extension == 'csv'){
+            $file_data = array_map('str_getcsv', file($csv_file->getRealPath()));
+            $first_row = explode(';', $file_data[0][0]);
+
+            $temp_member = array();
+            for($i = 1; $i < count($file_data); $i++){
+                $temp_array = explode(';', $file_data[$i][0]);
+                if($temp_array[0] == ''){
+                    break;
+                }
+
+                $temp_member[$i] = new Member();
+                for($j = 0; $j < count($first_row); $j++){
+                    if(trim($first_row[$j] == '')){
+                        break;
+                    }
+                    $temp_member[$i]->{trim($first_row[$j])} = $temp_array[$j];
+                }
+                $temp_member[$i]->access_grant = 1;
+
+                $temp_member[$i]->save();
+            }
+
+            return redirect('home');
+        }
+    }
 }

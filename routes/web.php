@@ -85,6 +85,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index'])->name('home');
         Route::post('/changeGrant', [AdminController::class, 'changeGrant'])->name('changeGrant');
+        Route::post('/memberCSV', [MemberController::class, 'memberCSV'])->name('memberCSV');
     });
 
     //This exclusive for MANAGEMENT
@@ -131,7 +132,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/addBlasting', [CampaignController::class, 'campaignSession'])->name('addBlasting');
         Route::post('/tempImg', [CampaignController::class, 'addImg'])->name('tempImg');
         Route::post('/renderTemplate', [CampaignController::class, 'renderTemplate'])->name('renderTemplate');
-        
+
         // Route::get('/chooseRecipients', function () {
         //     return view('layouts.blasting.choose_recipients');
         // });

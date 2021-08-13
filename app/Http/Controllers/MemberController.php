@@ -72,6 +72,7 @@ class MemberController extends Controller
                     $temp_member[$i]->{trim($first_row[$j])} = $temp_array[$j];
                 }
                 $temp_member[$i]->access_grant = 1;
+                $temp_member[$i]->password = bcrypt("ppiutm123");
 
                 $temp_member[$i]->save();
             }

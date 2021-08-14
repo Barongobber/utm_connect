@@ -55,11 +55,21 @@ class MemberController extends Controller
 
         if($file_extension == 'csv'){
             $file_data = array_map('str_getcsv', file($csv_file->getRealPath()));
-            $first_row = explode(';', $file_data[0][0]);
+
+            $first_row = array();
+            if(count($file_data[0]) == 1)
+                $first_row = explode(';', $file_data[0][0]);
+            else if(count($file_data[0]) > 1)
+                $first_row = $file_data[0];
 
             $temp_member = array();
             for($i = 1; $i < count($file_data); $i++){
-                $temp_array = explode(';', $file_data[$i][0]);
+                $temp_array = array();
+                if(count($file_data[0]) == 1)
+                    $temp_array = explode(';', $file_data[$i][0]);
+                else if(count($file_data[0]) > 1)
+                    $temp_array = $file_data[$i];
+
                 if($temp_array[0] == ''){
                     break;
                 }

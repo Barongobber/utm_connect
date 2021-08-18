@@ -55,6 +55,7 @@ class MemberController extends Controller
 
         if($file_extension == 'csv'){
             $file_data = array_map('str_getcsv', file($csv_file->getRealPath()));
+            //dd($file_data);
 
             $first_row = array();
             if(count($file_data[0]) == 1)
@@ -67,8 +68,12 @@ class MemberController extends Controller
                 $temp_array = array();
                 if(count($file_data[0]) == 1)
                     $temp_array = explode(';', $file_data[$i][0]);
-                else if(count($file_data[0]) > 1)
-                    $temp_array = $file_data[$i];
+                else if(count($file_data[0]) > 1){
+                    if(count($file_data[$i]) == 1)
+                        $temp_array = explode(',', $file_data[$i][0]);
+                    else
+                        $temp_array = $file_data[$i];
+                }
 
                 if($temp_array[0] == ''){
                     break;
@@ -79,10 +84,13 @@ class MemberController extends Controller
                     if(trim($first_row[$j] == '')){
                         break;
                     }
+                    if(trim($first_row[$j] == 'password')){
+                        $temp_member[$i]->{trim($first_row[$j])} = bcrypt($temp_array[$j]);
+                        continue;
+                    }
                     $temp_member[$i]->{trim($first_row[$j])} = $temp_array[$j];
                 }
                 $temp_member[$i]->access_grant = 1;
-                $temp_member[$i]->password = bcrypt("ppiutm123");
 
                 $temp_member[$i]->save();
             }

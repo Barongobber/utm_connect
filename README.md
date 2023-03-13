@@ -13,13 +13,13 @@ Alternative installation is possible without local dependencies relying on [Dock
 Clone the repository
 
 ```bash
-    git clone git@github.com:Barongobber/ApplicationDevelopment.git
+    git clone https://github.com/Barongobber/utm_connect.git
 ```
 
 Switch to the repo folder
 
 ```bash
-    cd ApplicationDevelopment
+    cd utm_connect
 ```
 
 Install all the dependencies using composer
